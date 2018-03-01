@@ -1,0 +1,48 @@
+<VirtualHost *:8077>
+    ## ServerAdmin webmaster@dummy-host.example.com
+    DocumentRoot "C:/xampp_portable_php7.0/htdocs/global_store"
+    ServerName global.store
+    ServerAlias www.global.store
+    ## ErrorLog "logs/dummy-host.example.com-error.log"
+    ## CustomLog "logs/dummy-host.example.com-access.log" common
+</VirtualHost>
+
+<VirtualHost *:8077>
+    DocumentRoot "C:/xampp_portable_php7.0/htdocs/global_store"
+    ServerName ph.global.store
+    ServerAlias ph.global.store
+    SetEnv MAGE_RUN_CODE "gs_ph"
+    SetEnv MAGE_RUN_TYPE "website"
+</VirtualHost>
+
+<VirtualHost *:8077>
+    DocumentRoot "C:/xampp_portable_php7.0/htdocs/global_store"
+    ServerName gb.global.store
+    ServerAlias gb.global.store
+    SetEnv MAGE_RUN_CODE "gs_gb"
+    SetEnv MAGE_RUN_TYPE "website"
+</VirtualHost>
+
+<VirtualHost *:8077>
+    DocumentRoot "C:/xampp_portable_php7.0/htdocs/global_store"
+    ServerName cn.global.store
+    ServerAlias cn.global.store
+    SetEnv MAGE_RUN_CODE "gs_cn"
+    SetEnv MAGE_RUN_TYPE "website"
+</VirtualHost>
+
+<VirtualHost *:8077>
+    DocumentRoot "C:/xampp_portable_php7.0/htdocs/global_store"
+    ServerName us.global.store
+    ServerAlias us.global.store
+    SetEnv MAGE_RUN_CODE "gs_us"
+    SetEnv MAGE_RUN_TYPE "website"
+</VirtualHost>
+
+<VirtualHost *:8077>
+    DocumentRoot "C:/xampp_portable_php7.0/htdocs/global_store"
+    ServerName au.global.store
+    ServerAlias au.global.store
+    SetEnv MAGE_RUN_CODE "gs_au"
+    SetEnv MAGE_RUN_TYPE "website"
+</VirtualHost>

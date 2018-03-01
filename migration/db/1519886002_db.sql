@@ -86,7 +86,7 @@ CREATE TABLE `admin_user` (
 
 LOCK TABLES `admin_user` WRITE;
 /*!40000 ALTER TABLE `admin_user` DISABLE KEYS */;
-INSERT INTO `admin_user` VALUES ('1','admin','admin','admin@global.store','admin','0279e96db148e3a390d42c48ad37dd995a195840d1b3fd31f12c3ab5e29dd363:lIZPteaTwxzkTSvt8l8RaupoLlydO8Vi:1','2018-02-27 10:03:20','2018-02-27 10:30:31','2018-02-27 10:30:31',2,0,1,'{\"configState\":{\"web_seo\":\"1\",\"web_url\":\"0\",\"web_unsecure\":\"0\",\"web_secure\":\"0\",\"web_default\":\"0\",\"web_cookie\":\"0\",\"web_session\":\"0\",\"web_browser_capabilities\":\"0\"}}',NULL,NULL,'en_US',0,NULL,NULL,NULL);
+INSERT INTO `admin_user` VALUES ('1','admin','admin','admin@global.store','admin','0279e96db148e3a390d42c48ad37dd995a195840d1b3fd31f12c3ab5e29dd363:lIZPteaTwxzkTSvt8l8RaupoLlydO8Vi:1','2018-02-27 10:03:20','2018-03-01 06:00:38','2018-03-01 05:39:16',8,0,1,'{\"configState\":{\"web_seo\":\"0\",\"web_url\":\"1\",\"web_unsecure\":\"0\",\"web_secure\":\"0\",\"web_default\":\"0\",\"web_cookie\":\"0\",\"web_session\":\"0\",\"web_browser_capabilities\":\"0\",\"currency_options\":\"1\",\"general_country\":\"0\",\"general_locale\":\"1\",\"general_store_information\":\"0\",\"currency_yahoofinance\":\"0\",\"currency_fixerio\":\"0\",\"currency_webservicex\":\"0\",\"currency_import\":\"1\",\"catalog_price\":\"1\",\"catalog_fields_masks\":\"0\",\"catalog_frontend\":\"0\",\"catalog_review\":\"0\",\"catalog_productalert\":\"0\",\"catalog_productalert_cron\":\"0\",\"catalog_placeholder\":\"0\",\"catalog_recently_products\":\"0\",\"catalog_product_video\":\"0\",\"catalog_layered_navigation\":\"0\",\"catalog_seo\":\"0\",\"catalog_navigation\":\"0\",\"catalog_search\":\"0\",\"catalog_downloadable\":\"0\",\"catalog_custom_options\":\"0\"}}',NULL,NULL,'en_US',0,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `admin_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +106,7 @@ CREATE TABLE `admin_user_session` (
   PRIMARY KEY (`id`),
   KEY `ADMIN_USER_SESSION_SESSION_ID` (`session_id`),
   KEY `ADMIN_USER_SESSION_USER_ID` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
 
 --
 -- Dumping data for table `admin_user_session`
@@ -114,7 +114,7 @@ CREATE TABLE `admin_user_session` (
 
 LOCK TABLES `admin_user_session` WRITE;
 /*!40000 ALTER TABLE `admin_user_session` DISABLE KEYS */;
-INSERT INTO `admin_user_session` VALUES ('1','79p9metcjarcsgs61g823jh6s2','1',2,'2018-02-27 10:27:07','2018-02-27 10:30:31','127.0.0.1'),('2','aeu651ml4sdbqgjn7jce92bte7','1',1,'2018-02-27 10:30:31','2018-02-27 10:44:04','127.0.0.1');
+INSERT INTO `admin_user_session` VALUES ('1','79p9metcjarcsgs61g823jh6s2','1',2,'2018-02-27 10:27:07','2018-02-27 10:30:31','127.0.0.1'),('2','aeu651ml4sdbqgjn7jce92bte7','1',2,'2018-02-27 10:30:31','2018-02-27 11:09:02','127.0.0.1'),('3','og2nkpcu3eoehkrmv9nu0k0fn7','1',1,'2018-02-27 11:09:02','2018-02-27 11:45:14','127.0.0.1'),('4','254cg35onjsi01ulsaundmplp4','1',1,'2018-02-28 02:36:27','2018-02-28 02:47:23','127.0.0.1'),('5','m0cqt9rpseulvu0cfs91lu6413','1',1,'2018-02-28 10:54:18','2018-02-28 11:22:58','127.0.0.1'),('6','3l269d943o0ekjaoq0dmmtsbp4','1',1,'2018-03-01 02:19:59','2018-03-01 02:48:05','127.0.0.1'),('7','l97coflo3pq6c22brhra289bc5','1',1,'2018-03-01 03:42:57','2018-03-01 04:18:42','127.0.0.1'),('8','obj6evo76l9uic4264a7qgh6n5','1',1,'2018-03-01 05:39:16','2018-03-01 06:32:37','127.0.0.1');
 /*!40000 ALTER TABLE `admin_user_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +136,17 @@ CREATE TABLE `adminnotification_inbox` (
   KEY `ADMINNOTIFICATION_INBOX_SEVERITY` (`severity`),
   KEY `ADMINNOTIFICATION_INBOX_IS_READ` (`is_read`),
   KEY `ADMINNOTIFICATION_INBOX_IS_REMOVE` (`is_remove`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Adminnotification Inbox';
+
+--
+-- Dumping data for table `adminnotification_inbox`
+--
+
+LOCK TABLES `adminnotification_inbox` WRITE;
+/*!40000 ALTER TABLE `adminnotification_inbox` DISABLE KEYS */;
+INSERT INTO `adminnotification_inbox` VALUES ('1',1,'2018-02-27 19:45:24','Magento Open Source 2.2.3, 2.1.12, and 2.0.18 Enhance Security and Functionality – 2/27/2018','Magento Open Source 2.2.3, 2.1.12, and 2.0.18 include critical security enhancements and feature updates, including support for recent USPS API changes. Review the release notes for more information: http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html, http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html, http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html  \n','http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html',0,0);
+/*!40000 ALTER TABLE `adminnotification_inbox` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `authorization_role`
@@ -251,7 +261,7 @@ CREATE TABLE `catalog_category_entity` (
   PRIMARY KEY (`entity_id`),
   KEY `CATALOG_CATEGORY_ENTITY_LEVEL` (`level`),
   KEY `CATALOG_CATEGORY_ENTITY_PATH` (`path`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table';
 
 --
 -- Dumping data for table `catalog_category_entity`
@@ -259,7 +269,7 @@ CREATE TABLE `catalog_category_entity` (
 
 LOCK TABLES `catalog_category_entity` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity` DISABLE KEYS */;
-INSERT INTO `catalog_category_entity` VALUES ('1',3,'0','2018-02-27 10:03:08','2018-02-27 10:03:09','1','0','0','1'),('2',3,'1','2018-02-27 10:03:09','2018-02-27 10:03:09','1/2','1','1','0');
+INSERT INTO `catalog_category_entity` VALUES ('1',3,'0','2018-02-27 10:03:08','2018-03-01 04:17:38','1','0','0','7'),('3',3,'1','2018-02-27 10:57:28','2018-03-01 02:26:28','1/3','2','1','1'),('4',3,'1','2018-02-27 10:57:51','2018-02-27 10:57:51','1/4','3','1','0'),('5',3,'1','2018-02-27 10:58:06','2018-03-01 02:21:26','1/5','4','1','1'),('6',3,'1','2018-02-27 10:58:28','2018-03-01 02:23:55','1/6','5','1','1'),('7',3,'1','2018-02-27 10:58:50','2018-02-27 10:58:50','1/7','6','1','0'),('9',3,'5','2018-03-01 02:21:26','2018-03-01 04:17:01','1/5/9','1','2','0'),('10',3,'6','2018-03-01 02:23:55','2018-03-01 02:23:55','1/6/10','1','2','0'),('11',3,'3','2018-03-01 02:26:28','2018-03-01 02:26:28','1/3/11','1','2','0');
 /*!40000 ALTER TABLE `catalog_category_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,7 +289,17 @@ CREATE TABLE `catalog_category_entity_datetime` (
   KEY `CATALOG_CATEGORY_ENTITY_DATETIME_ENTITY_ID` (`entity_id`),
   KEY `CATALOG_CATEGORY_ENTITY_DATETIME_ATTRIBUTE_ID` (`attribute_id`),
   KEY `CATALOG_CATEGORY_ENTITY_DATETIME_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Datetime Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_category_entity_datetime`
+--
+
+LOCK TABLES `catalog_category_entity_datetime` WRITE;
+/*!40000 ALTER TABLE `catalog_category_entity_datetime` DISABLE KEYS */;
+INSERT INTO `catalog_category_entity_datetime` VALUES ('3',61,0,'9',NULL),('4',62,0,'9',NULL);
+/*!40000 ALTER TABLE `catalog_category_entity_datetime` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_category_entity_decimal`
@@ -315,7 +335,7 @@ CREATE TABLE `catalog_category_entity_int` (
   KEY `CATALOG_CATEGORY_ENTITY_INT_ENTITY_ID` (`entity_id`),
   KEY `CATALOG_CATEGORY_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `CATALOG_CATEGORY_ENTITY_INT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table';
 
 --
 -- Dumping data for table `catalog_category_entity_int`
@@ -323,7 +343,7 @@ CREATE TABLE `catalog_category_entity_int` (
 
 LOCK TABLES `catalog_category_entity_int` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity_int` DISABLE KEYS */;
-INSERT INTO `catalog_category_entity_int` VALUES ('1',69,0,'1','1'),('2',46,0,'2','1'),('3',69,0,'2','1');
+INSERT INTO `catalog_category_entity_int` VALUES ('1',69,0,'1','1'),('4',46,0,'3','1'),('5',54,0,'3','1'),('6',69,0,'3','1'),('7',70,0,'3','0'),('8',71,0,'3','0'),('9',46,0,'4','1'),('10',54,0,'4','1'),('11',69,0,'4','1'),('12',70,0,'4','0'),('13',71,0,'4','0'),('14',46,0,'5','1'),('15',54,0,'5','1'),('16',69,0,'5','1'),('17',70,0,'5','0'),('18',71,0,'5','0'),('19',46,0,'6','1'),('20',54,0,'6','1'),('21',69,0,'6','1'),('22',70,0,'6','0'),('23',71,0,'6','0'),('24',46,0,'7','1'),('25',54,0,'7','1'),('26',69,0,'7','1'),('27',70,0,'7','0'),('28',71,0,'7','0'),('38',46,0,'9','1'),('39',54,0,'9','1'),('40',69,0,'9','1'),('41',70,0,'9','0'),('42',71,0,'9','0'),('43',53,0,'9',NULL),('45',46,0,'10','1'),('46',54,0,'10','1'),('47',69,0,'10','1'),('48',46,0,'11','1'),('49',54,0,'11','1'),('50',69,0,'11','1'),('51',70,0,'11','0'),('52',71,0,'11','0');
 /*!40000 ALTER TABLE `catalog_category_entity_int` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,7 +363,17 @@ CREATE TABLE `catalog_category_entity_text` (
   KEY `CATALOG_CATEGORY_ENTITY_TEXT_ENTITY_ID` (`entity_id`),
   KEY `CATALOG_CATEGORY_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `CATALOG_CATEGORY_ENTITY_TEXT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Text Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_category_entity_text`
+--
+
+LOCK TABLES `catalog_category_entity_text` WRITE;
+/*!40000 ALTER TABLE `catalog_category_entity_text` DISABLE KEYS */;
+INSERT INTO `catalog_category_entity_text` VALUES ('5',47,0,'9',NULL),('6',50,0,'9',NULL),('7',51,0,'9',NULL),('8',64,0,'9',NULL);
+/*!40000 ALTER TABLE `catalog_category_entity_text` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_category_entity_varchar`
@@ -361,7 +391,7 @@ CREATE TABLE `catalog_category_entity_varchar` (
   KEY `CATALOG_CATEGORY_ENTITY_VARCHAR_ENTITY_ID` (`entity_id`),
   KEY `CATALOG_CATEGORY_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `CATALOG_CATEGORY_ENTITY_VARCHAR_STORE_ID` (`store_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table';
 
 --
 -- Dumping data for table `catalog_category_entity_varchar`
@@ -369,7 +399,7 @@ CREATE TABLE `catalog_category_entity_varchar` (
 
 LOCK TABLES `catalog_category_entity_varchar` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity_varchar` DISABLE KEYS */;
-INSERT INTO `catalog_category_entity_varchar` VALUES ('1',45,0,'1','Root Catalog'),('2',45,0,'2','Default Category'),('3',52,0,'2','PRODUCTS');
+INSERT INTO `catalog_category_entity_varchar` VALUES ('1',45,0,'1','Root Catalog'),('4',45,0,'3','Global Store GB'),('5',52,0,'3','PRODUCTS'),('6',117,0,'3','global-store-gb'),('7',45,0,'4','Global Store CN'),('8',52,0,'4','PRODUCTS'),('9',117,0,'4','global-store-cn'),('10',45,0,'5','Global Store PH'),('11',52,0,'5','PRODUCTS'),('12',117,0,'5','global-store-ph'),('13',45,0,'6','Global Store US'),('14',52,0,'6','PRODUCTS'),('15',117,0,'6','global-store-us'),('16',45,0,'7','Global Store AU'),('17',52,0,'7','PRODUCTS'),('18',117,0,'7','global-store-au'),('30',45,0,'9','At Home'),('31',52,0,'9','PRODUCTS_AND_PAGE'),('32',117,0,'9','at-home'),('33',118,0,'9','at-home'),('35',49,0,'9',NULL),('36',60,0,'9',NULL),('37',63,0,'9',NULL),('43',45,0,'10','At Home'),('44',117,0,'10','at-home'),('45',118,0,'10','at-home'),('50',45,0,'11','At Home'),('51',52,0,'11','PRODUCTS_AND_PAGE'),('52',117,0,'11','at-home'),('53',118,0,'11','at-home');
 /*!40000 ALTER TABLE `catalog_category_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -386,7 +416,17 @@ CREATE TABLE `catalog_category_product` (
   PRIMARY KEY (`entity_id`,`category_id`,`product_id`),
   UNIQUE KEY `CATALOG_CATEGORY_PRODUCT_CATEGORY_ID_PRODUCT_ID` (`category_id`,`product_id`),
   KEY `CATALOG_CATEGORY_PRODUCT_PRODUCT_ID` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product To Category Linkage Table';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Catalog Product To Category Linkage Table';
+
+--
+-- Dumping data for table `catalog_category_product`
+--
+
+LOCK TABLES `catalog_category_product` WRITE;
+/*!40000 ALTER TABLE `catalog_category_product` DISABLE KEYS */;
+INSERT INTO `catalog_category_product` VALUES ('3','5','1','0'),('4','6','1','0'),('5','9','1','0'),('6','10','1','0'),('7','3','2','0'),('8','6','2','0'),('9','10','2','0'),('10','11','2','0');
+/*!40000 ALTER TABLE `catalog_category_product` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_category_product_index`
@@ -406,6 +446,16 @@ CREATE TABLE `catalog_category_product_index` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index';
 
 --
+-- Dumping data for table `catalog_category_product_index`
+--
+
+LOCK TABLES `catalog_category_product_index` WRITE;
+/*!40000 ALTER TABLE `catalog_category_product_index` DISABLE KEYS */;
+INSERT INTO `catalog_category_product_index` VALUES ('5','1','10000',0,1,4),('6','1','10000',0,1,4),('9','1','0',1,1,4),('3','2','10000',0,2,4),('6','2','10000',0,2,4),('11','2','0',1,2,4),('3','2','10000',0,4,4),('5','1','10000',0,4,4),('6','1','10000',0,4,4),('6','2','10000',0,4,4),('10','1','0',1,4,4),('10','2','0',1,4,4);
+/*!40000 ALTER TABLE `catalog_category_product_index` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `catalog_category_product_index_replica`
 --
 
@@ -421,6 +471,16 @@ CREATE TABLE `catalog_category_product_index_replica` (
   KEY `CAT_CTGR_PRD_IDX_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
   KEY `CAT_CTGR_PRD_IDX_STORE_ID_CTGR_ID_VISIBILITY_IS_PARENT_POSITION` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index';
+
+--
+-- Dumping data for table `catalog_category_product_index_replica`
+--
+
+LOCK TABLES `catalog_category_product_index_replica` WRITE;
+/*!40000 ALTER TABLE `catalog_category_product_index_replica` DISABLE KEYS */;
+INSERT INTO `catalog_category_product_index_replica` VALUES ('5','1','10000',0,1,4),('6','1','10000',0,1,4),('9','1','0',1,1,4),('3','2','10000',0,2,4),('6','2','10000',0,2,4),('11','2','0',1,2,4),('3','2','10000',0,4,4),('5','1','10000',0,4,4),('6','1','10000',0,4,4),('6','2','10000',0,4,4),('10','1','0',1,4,4),('10','2','0',1,4,4);
+/*!40000 ALTER TABLE `catalog_category_product_index_replica` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_category_product_index_tmp`
@@ -496,7 +556,7 @@ CREATE TABLE `catalog_eav_attribute` (
 
 LOCK TABLES `catalog_eav_attribute` WRITE;
 /*!40000 ALTER TABLE `catalog_eav_attribute` DISABLE KEYS */;
-INSERT INTO `catalog_eav_attribute` VALUES (45,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(46,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(47,NULL,0,1,0,0,0,0,1,0,0,0,0,NULL,0,'0',1,0,0,0,0,0,'1',NULL),(48,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(49,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(50,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(51,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(52,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(53,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(54,NULL,1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(55,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(56,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(57,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(58,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(59,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(60,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(61,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(62,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(63,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(64,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(65,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(66,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(67,'Magento\\Catalog\\Block\\Adminhtml\\Category\\Helper\\Sortby\\Available',0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(68,'Magento\\Catalog\\Block\\Adminhtml\\Category\\Helper\\Sortby\\DefaultSortby',0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(69,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(70,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(71,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(72,'Magento\\Catalog\\Block\\Adminhtml\\Category\\Helper\\Pricestep',0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(73,NULL,0,1,1,0,0,0,0,0,0,1,1,NULL,1,'0',0,0,0,0,0,0,'5',NULL),(74,NULL,1,1,1,0,1,0,0,0,0,0,0,NULL,1,'0',0,0,0,0,0,0,'6',NULL),(75,NULL,0,1,1,0,1,0,1,0,0,0,0,NULL,1,'0',1,0,0,0,0,0,'1',NULL),(76,NULL,0,1,1,0,1,0,1,0,0,1,0,NULL,1,'0',1,0,0,1,0,0,'1',NULL),(77,NULL,1,1,1,1,0,0,0,0,0,1,1,'simple,virtual,downloadable,bundle,configurable',1,'0',0,0,0,0,0,0,'1',NULL),(78,NULL,1,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(79,NULL,2,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,0,'1',NULL),(80,NULL,2,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,0,'1',NULL),(81,NULL,1,1,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable',0,'0',0,0,0,1,0,1,'1',NULL),(82,'Magento\\Catalog\\Block\\Adminhtml\\Product\\Helper\\Form\\Weight',1,1,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(83,NULL,1,1,1,1,1,0,0,0,0,0,0,'simple',1,'0',0,0,0,1,0,1,'1',NULL),(84,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(85,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(86,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(87,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(88,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(89,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(90,NULL,1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(91,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(92,NULL,2,1,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable,bundle',0,'0',0,0,0,0,0,0,'1',NULL),(93,NULL,1,1,1,1,1,0,0,0,0,0,0,'simple,virtual,configurable',1,'0',0,0,0,1,0,1,'1',NULL),(94,NULL,2,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(95,NULL,2,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(96,NULL,1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(97,'Magento\\Framework\\Data\\Form\\Element\\Hidden',2,1,1,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,1,0,0,0,'1',NULL),(98,NULL,0,0,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,0,0,0,'1',NULL),(99,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,1,0,0,0,'1',NULL),(100,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(101,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(102,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(103,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(104,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(105,'Magento\\Catalog\\Block\\Adminhtml\\Product\\Helper\\Form\\Category',1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(106,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(107,NULL,1,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(108,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(109,NULL,0,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(110,NULL,0,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(111,NULL,0,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(112,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(113,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(114,NULL,2,1,0,0,0,0,0,0,0,0,0,'simple,bundle,grouped,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(115,'Magento\\CatalogInventory\\Block\\Adminhtml\\Form\\Field\\Stock',1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(116,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(117,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(118,NULL,0,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(119,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(120,NULL,0,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(121,'Magento\\Msrp\\Block\\Adminhtml\\Product\\Helper\\Form\\Type',1,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(122,'Magento\\Msrp\\Block\\Adminhtml\\Product\\Helper\\Form\\Type\\Price',2,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,0,0,0,'1',NULL),(123,NULL,1,0,0,0,0,0,0,0,0,1,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(124,NULL,0,0,0,0,0,0,0,0,0,0,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(125,NULL,0,0,0,0,0,0,0,0,0,0,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(126,NULL,1,0,0,0,0,0,0,0,0,1,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(127,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(128,NULL,1,1,0,0,0,0,0,0,0,0,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(129,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(130,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(131,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(132,'Magento\\GiftMessage\\Block\\Adminhtml\\Product\\Helper\\Form\\Config',1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(133,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(134,NULL,2,1,1,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL);
+INSERT INTO `catalog_eav_attribute` VALUES (45,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(46,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(47,NULL,0,1,0,0,0,0,1,0,0,0,0,NULL,0,'0',1,0,0,0,0,0,'1',NULL),(48,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(49,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(50,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(51,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(52,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(53,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(54,NULL,1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(55,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(56,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(57,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(58,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(59,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(60,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(61,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(62,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(63,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(64,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(65,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(66,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(67,'Magento\\Catalog\\Block\\Adminhtml\\Category\\Helper\\Sortby\\Available',0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(68,'Magento\\Catalog\\Block\\Adminhtml\\Category\\Helper\\Sortby\\DefaultSortby',0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(69,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(70,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(71,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(72,'Magento\\Catalog\\Block\\Adminhtml\\Category\\Helper\\Pricestep',0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(73,NULL,0,1,1,0,0,0,0,0,0,1,1,NULL,1,'0',0,0,0,0,0,0,'5',NULL),(74,NULL,1,1,1,0,1,0,0,0,0,0,0,NULL,1,'0',0,0,0,0,0,0,'6',NULL),(75,NULL,0,1,1,0,1,0,1,0,0,0,0,NULL,1,'0',1,0,0,0,0,0,'1',NULL),(76,NULL,0,1,1,0,1,0,1,0,0,1,0,NULL,1,'0',1,0,0,1,0,0,'1',NULL),(77,NULL,1,1,1,1,0,0,0,0,0,1,1,'simple,virtual,downloadable,bundle,configurable',1,'0',0,0,0,0,0,0,'1',NULL),(78,NULL,1,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(79,NULL,2,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,0,'1',NULL),(80,NULL,2,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,0,'1',NULL),(81,NULL,1,1,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable',0,'0',0,0,0,1,0,1,'1',NULL),(82,'Magento\\Catalog\\Block\\Adminhtml\\Product\\Helper\\Form\\Weight',1,1,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(83,NULL,1,1,1,1,1,0,0,0,0,0,0,'simple',1,'0',0,0,0,1,0,1,'1',NULL),(84,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(85,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(86,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(87,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(88,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(89,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(90,NULL,1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(91,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(92,NULL,2,1,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable,bundle',0,'0',0,0,0,0,0,0,'1',NULL),(93,NULL,1,1,1,1,1,0,0,0,0,0,0,'simple,virtual,configurable',1,'0',0,0,0,1,0,1,'1',NULL),(94,NULL,2,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(95,NULL,2,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(96,NULL,1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(97,'Magento\\Framework\\Data\\Form\\Element\\Hidden',2,1,1,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,1,0,0,0,'1',NULL),(98,NULL,1,0,0,0,0,0,0,0,0,0,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,0,0,0,'1',NULL),(99,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,1,0,0,0,'1',NULL),(100,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(101,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(102,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(103,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(104,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(105,'Magento\\Catalog\\Block\\Adminhtml\\Product\\Helper\\Form\\Category',1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(106,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(107,NULL,1,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(108,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(109,NULL,0,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(110,NULL,0,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(111,NULL,0,0,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(112,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(113,NULL,1,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(114,NULL,2,1,0,0,0,0,0,0,0,0,0,'simple,bundle,grouped,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(115,'Magento\\CatalogInventory\\Block\\Adminhtml\\Form\\Field\\Stock',1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(116,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(117,NULL,0,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(118,NULL,0,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(119,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,1,0,1,'1',NULL),(120,NULL,0,0,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(121,'Magento\\Msrp\\Block\\Adminhtml\\Product\\Helper\\Form\\Type',1,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL),(122,'Magento\\Msrp\\Block\\Adminhtml\\Product\\Helper\\Form\\Type\\Price',2,1,0,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,0,0,0,'1',NULL),(123,NULL,1,0,0,0,0,0,0,0,0,1,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(124,NULL,0,0,0,0,0,0,0,0,0,0,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(125,NULL,0,0,0,0,0,0,0,0,0,0,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(126,NULL,1,0,0,0,0,0,0,0,0,1,0,'downloadable',0,'0',0,0,0,0,0,0,'1',NULL),(127,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(128,NULL,1,1,0,0,0,0,0,0,0,0,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(129,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(130,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(131,NULL,1,1,0,0,0,0,0,0,0,1,0,'bundle',0,'0',0,0,0,0,0,0,'1',NULL),(132,'Magento\\GiftMessage\\Block\\Adminhtml\\Product\\Helper\\Form\\Config',1,1,0,0,0,0,0,0,0,0,0,NULL,0,'0',0,0,0,1,0,0,'1',NULL),(133,NULL,0,1,0,0,0,0,0,0,0,1,0,NULL,0,'0',0,0,0,0,0,0,'1',NULL),(134,NULL,2,1,1,0,0,0,0,0,0,1,0,'simple,virtual,downloadable,bundle,configurable',0,'0',0,0,0,1,0,1,'1',NULL);
 /*!40000 ALTER TABLE `catalog_eav_attribute` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -613,7 +673,17 @@ CREATE TABLE `catalog_product_entity` (
   PRIMARY KEY (`entity_id`),
   KEY `CATALOG_PRODUCT_ENTITY_ATTRIBUTE_SET_ID` (`attribute_set_id`),
   KEY `CATALOG_PRODUCT_ENTITY_SKU` (`sku`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Table';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Table';
+
+--
+-- Dumping data for table `catalog_product_entity`
+--
+
+LOCK TABLES `catalog_product_entity` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity` VALUES ('1',4,'virtual','thtbrsh',0,0,'2018-02-28 11:17:15','2018-03-01 05:54:15'),('2',4,'simple','vaclnr',0,0,'2018-03-01 02:29:01','2018-03-01 04:15:09');
+/*!40000 ALTER TABLE `catalog_product_entity` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_datetime`
@@ -647,7 +717,17 @@ CREATE TABLE `catalog_product_entity_decimal` (
   UNIQUE KEY `CATALOG_PRODUCT_ENTITY_DECIMAL_ENTITY_ID_ATTRIBUTE_ID_STORE_ID` (`entity_id`,`attribute_id`,`store_id`),
   KEY `CATALOG_PRODUCT_ENTITY_DECIMAL_STORE_ID` (`store_id`),
   KEY `CATALOG_PRODUCT_ENTITY_DECIMAL_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Decimal Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_product_entity_decimal`
+--
+
+LOCK TABLES `catalog_product_entity_decimal` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_decimal` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_decimal` VALUES ('1',77,0,'1','5.0000'),('2',78,0,'1',NULL),('3',77,0,'2','120.0000'),('4',82,0,'2','20.0000'),('5',78,0,'2',NULL);
+/*!40000 ALTER TABLE `catalog_product_entity_decimal` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_gallery`
@@ -683,7 +763,17 @@ CREATE TABLE `catalog_product_entity_int` (
   UNIQUE KEY `CATALOG_PRODUCT_ENTITY_INT_ENTITY_ID_ATTRIBUTE_ID_STORE_ID` (`entity_id`,`attribute_id`,`store_id`),
   KEY `CATALOG_PRODUCT_ENTITY_INT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `CATALOG_PRODUCT_ENTITY_INT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Integer Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Integer Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_product_entity_int`
+--
+
+LOCK TABLES `catalog_product_entity_int` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_int` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_int` VALUES ('1',97,0,'1','1'),('2',99,0,'1','4'),('3',115,0,'1','1'),('4',134,0,'1','2'),('5',97,0,'2','1'),('6',99,0,'2','4'),('7',115,0,'2','1'),('8',134,0,'2','2');
+/*!40000 ALTER TABLE `catalog_product_entity_int` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_media_gallery`
@@ -698,7 +788,17 @@ CREATE TABLE `catalog_product_entity_media_gallery` (
   `disabled` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Visibility status',
   PRIMARY KEY (`value_id`),
   KEY `CATALOG_PRODUCT_ENTITY_MEDIA_GALLERY_ATTRIBUTE_ID` (`attribute_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Media Gallery Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Media Gallery Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_product_entity_media_gallery`
+--
+
+LOCK TABLES `catalog_product_entity_media_gallery` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_media_gallery` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_media_gallery` VALUES ('1',90,'//t/o/toothbrush-2767679_1920.jpg','image',0),('2',90,'//p/e/pexels-photo-844874.jpeg','image',0);
+/*!40000 ALTER TABLE `catalog_product_entity_media_gallery` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_media_gallery_value`
@@ -717,7 +817,17 @@ CREATE TABLE `catalog_product_entity_media_gallery_value` (
   KEY `CATALOG_PRODUCT_ENTITY_MEDIA_GALLERY_VALUE_STORE_ID` (`store_id`),
   KEY `CATALOG_PRODUCT_ENTITY_MEDIA_GALLERY_VALUE_ENTITY_ID` (`entity_id`),
   KEY `CATALOG_PRODUCT_ENTITY_MEDIA_GALLERY_VALUE_VALUE_ID` (`value_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Media Gallery Attribute Value Table';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Media Gallery Attribute Value Table';
+
+--
+-- Dumping data for table `catalog_product_entity_media_gallery_value`
+--
+
+LOCK TABLES `catalog_product_entity_media_gallery_value` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_media_gallery_value` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_media_gallery_value` VALUES ('1',0,'1',NULL,'1',0,'5'),('2',0,'2',NULL,'1',0,'6'),('1',4,'1',NULL,'1',0,'7');
+/*!40000 ALTER TABLE `catalog_product_entity_media_gallery_value` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_media_gallery_value_to_entity`
@@ -730,6 +840,16 @@ CREATE TABLE `catalog_product_entity_media_gallery_value_to_entity` (
   UNIQUE KEY `CAT_PRD_ENTT_MDA_GLR_VAL_TO_ENTT_VAL_ID_ENTT_ID` (`value_id`,`entity_id`),
   KEY `CAT_PRD_ENTT_MDA_GLR_VAL_TO_ENTT_ENTT_ID_CAT_PRD_ENTT_ENTT_ID` (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Link Media value to Product entity table';
+
+--
+-- Dumping data for table `catalog_product_entity_media_gallery_value_to_entity`
+--
+
+LOCK TABLES `catalog_product_entity_media_gallery_value_to_entity` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_media_gallery_value_to_entity` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_media_gallery_value_to_entity` VALUES ('1','1'),('2','2');
+/*!40000 ALTER TABLE `catalog_product_entity_media_gallery_value_to_entity` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_media_gallery_value_video`
@@ -763,7 +883,17 @@ CREATE TABLE `catalog_product_entity_text` (
   UNIQUE KEY `CATALOG_PRODUCT_ENTITY_TEXT_ENTITY_ID_ATTRIBUTE_ID_STORE_ID` (`entity_id`,`attribute_id`,`store_id`),
   KEY `CATALOG_PRODUCT_ENTITY_TEXT_ATTRIBUTE_ID` (`attribute_id`),
   KEY `CATALOG_PRODUCT_ENTITY_TEXT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Text Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_product_entity_text`
+--
+
+LOCK TABLES `catalog_product_entity_text` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_text` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_text` VALUES ('1',85,0,'1','Toothbrush'),('2',85,0,'2','Vacuum Cleaner'),('3',85,4,'1','Toothbrush');
+/*!40000 ALTER TABLE `catalog_product_entity_text` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_tier_price`
@@ -783,7 +913,17 @@ CREATE TABLE `catalog_product_entity_tier_price` (
   UNIQUE KEY `UNQ_E8AB433B9ACB00343ABB312AD2FAB087` (`entity_id`,`all_groups`,`customer_group_id`,`qty`,`website_id`),
   KEY `CATALOG_PRODUCT_ENTITY_TIER_PRICE_CUSTOMER_GROUP_ID` (`customer_group_id`),
   KEY `CATALOG_PRODUCT_ENTITY_TIER_PRICE_WEBSITE_ID` (`website_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Tier Price Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Tier Price Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_product_entity_tier_price`
+--
+
+LOCK TABLES `catalog_product_entity_tier_price` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_tier_price` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_tier_price` VALUES ('1','1',0,'1','100.0000','0.0000',NULL,0);
+/*!40000 ALTER TABLE `catalog_product_entity_tier_price` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_entity_varchar`
@@ -800,7 +940,17 @@ CREATE TABLE `catalog_product_entity_varchar` (
   UNIQUE KEY `CATALOG_PRODUCT_ENTITY_VARCHAR_ENTITY_ID_ATTRIBUTE_ID_STORE_ID` (`entity_id`,`attribute_id`,`store_id`),
   KEY `CATALOG_PRODUCT_ENTITY_VARCHAR_ATTRIBUTE_ID` (`attribute_id`),
   KEY `CATALOG_PRODUCT_ENTITY_VARCHAR_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COMMENT='Catalog Product Varchar Attribute Backend Table';
+
+--
+-- Dumping data for table `catalog_product_entity_varchar`
+--
+
+LOCK TABLES `catalog_product_entity_varchar` WRITE;
+/*!40000 ALTER TABLE `catalog_product_entity_varchar` DISABLE KEYS */;
+INSERT INTO `catalog_product_entity_varchar` VALUES ('1',73,0,'1','Toothbrush'),('2',84,0,'1','Toothbrush'),('3',86,0,'1','Toothbrush '),('4',87,0,'1','//t/o/toothbrush-2767679_1920.jpg'),('5',88,0,'1','//t/o/toothbrush-2767679_1920.jpg'),('6',89,0,'1','//t/o/toothbrush-2767679_1920.jpg'),('7',106,0,'1','container2'),('8',119,0,'1','toothbrush'),('9',132,0,'1','2'),('10',133,0,'1','//t/o/toothbrush-2767679_1920.jpg'),('15',73,0,'2','Vacuum Cleaner'),('16',84,0,'2','Vacuum Cleaner'),('17',86,0,'2','Vacuum Cleaner '),('18',87,0,'2','//p/e/pexels-photo-844874.jpeg'),('19',88,0,'2','//p/e/pexels-photo-844874.jpeg'),('20',89,0,'2','//p/e/pexels-photo-844874.jpeg'),('21',106,0,'2','container2'),('22',114,0,'2','US'),('23',119,0,'2','vacuum-cleaner'),('24',132,0,'2','2'),('25',133,0,'2','//p/e/pexels-photo-844874.jpeg'),('38',84,4,'1','Toothbrush'),('39',86,4,'1','Toothbrush '),('40',87,4,'1','//t/o/toothbrush-2767679_1920.jpg'),('41',88,4,'1','//t/o/toothbrush-2767679_1920.jpg'),('42',89,4,'1','//t/o/toothbrush-2767679_1920.jpg'),('43',106,4,'1','container2'),('44',119,4,'1','toothbrush'),('46',133,4,'1','//t/o/toothbrush-2767679_1920.jpg');
+/*!40000 ALTER TABLE `catalog_product_entity_varchar` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_frontend_action`
@@ -835,6 +985,16 @@ CREATE TABLE `catalog_product_index_eav` (
   KEY `CATALOG_PRODUCT_INDEX_EAV_STORE_ID` (`store_id`),
   KEY `CATALOG_PRODUCT_INDEX_EAV_VALUE` (`value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product EAV Index Table';
+
+--
+-- Dumping data for table `catalog_product_index_eav`
+--
+
+LOCK TABLES `catalog_product_index_eav` WRITE;
+/*!40000 ALTER TABLE `catalog_product_index_eav` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_eav` VALUES ('1',99,1,'4','1'),('1',99,2,'4','1'),('1',99,3,'4','1'),('1',99,4,'4','1'),('1',99,5,'4','1'),('2',99,1,'4','2'),('2',99,2,'4','2'),('2',99,3,'4','2'),('2',99,4,'4','2'),('2',99,5,'4','2');
+/*!40000 ALTER TABLE `catalog_product_index_eav` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_index_eav_decimal`
@@ -939,6 +1099,16 @@ CREATE TABLE `catalog_product_index_eav_replica` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product EAV Index Table';
 
 --
+-- Dumping data for table `catalog_product_index_eav_replica`
+--
+
+LOCK TABLES `catalog_product_index_eav_replica` WRITE;
+/*!40000 ALTER TABLE `catalog_product_index_eav_replica` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_eav_replica` VALUES ('1',99,1,'4','1'),('1',99,2,'4','1'),('1',99,3,'4','1'),('1',99,4,'4','1'),('1',99,5,'4','1'),('2',99,1,'4','2'),('2',99,2,'4','2'),('2',99,3,'4','2'),('2',99,4,'4','2'),('2',99,5,'4','2');
+/*!40000 ALTER TABLE `catalog_product_index_eav_replica` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `catalog_product_index_eav_tmp`
 --
 
@@ -975,6 +1145,16 @@ CREATE TABLE `catalog_product_index_price` (
   KEY `CATALOG_PRODUCT_INDEX_PRICE_MIN_PRICE` (`min_price`),
   KEY `CAT_PRD_IDX_PRICE_WS_ID_CSTR_GROUP_ID_MIN_PRICE` (`website_id`,`customer_group_id`,`min_price`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Price Index Table';
+
+--
+-- Dumping data for table `catalog_product_index_price`
+--
+
+LOCK TABLES `catalog_product_index_price` WRITE;
+/*!40000 ALTER TABLE `catalog_product_index_price` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_price` VALUES ('1','0',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','0',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','1',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','1',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','2',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','2',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','3',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','3',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('2','0',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','0',4,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','1',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','1',4,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','2',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','2',4,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','3',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','3',4,2,'120.0000','120.0000','120.0000','120.0000',NULL);
+/*!40000 ALTER TABLE `catalog_product_index_price` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `catalog_product_index_price_bundle_idx`
@@ -1323,6 +1503,16 @@ CREATE TABLE `catalog_product_index_price_replica` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Price Index Table';
 
 --
+-- Dumping data for table `catalog_product_index_price_replica`
+--
+
+LOCK TABLES `catalog_product_index_price_replica` WRITE;
+/*!40000 ALTER TABLE `catalog_product_index_price_replica` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_price_replica` VALUES ('1','0',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','0',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','1',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','1',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','2',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','2',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','3',1,2,'5.0000','5.0000','5.0000','5.0000',NULL),('1','3',4,2,'5.0000','5.0000','5.0000','5.0000',NULL),('2','0',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','0',4,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','1',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','1',4,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','2',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','2',4,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','3',2,2,'120.0000','120.0000','120.0000','120.0000',NULL),('2','3',4,2,'120.0000','120.0000','120.0000','120.0000',NULL);
+/*!40000 ALTER TABLE `catalog_product_index_price_replica` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `catalog_product_index_price_tmp`
 --
 
@@ -1359,6 +1549,16 @@ CREATE TABLE `catalog_product_index_tier_price` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Tier Price Index Table';
 
 --
+-- Dumping data for table `catalog_product_index_tier_price`
+--
+
+LOCK TABLES `catalog_product_index_tier_price` WRITE;
+/*!40000 ALTER TABLE `catalog_product_index_tier_price` DISABLE KEYS */;
+INSERT INTO `catalog_product_index_tier_price` VALUES ('1','1',0,NULL);
+/*!40000 ALTER TABLE `catalog_product_index_tier_price` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `catalog_product_index_website`
 --
 
@@ -1377,7 +1577,7 @@ CREATE TABLE `catalog_product_index_website` (
 
 LOCK TABLES `catalog_product_index_website` WRITE;
 /*!40000 ALTER TABLE `catalog_product_index_website` DISABLE KEYS */;
-INSERT INTO `catalog_product_index_website` VALUES (1,'2018-02-27','1');
+INSERT INTO `catalog_product_index_website` VALUES (1,'2018-02-28','1'),(2,'2018-02-28','1'),(3,'2018-02-28','1'),(4,'2018-02-28','1'),(5,'2018-02-28','1');
 /*!40000 ALTER TABLE `catalog_product_index_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1652,6 +1852,16 @@ CREATE TABLE `catalog_product_website` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product To Website Linkage Table';
 
 --
+-- Dumping data for table `catalog_product_website`
+--
+
+LOCK TABLES `catalog_product_website` WRITE;
+/*!40000 ALTER TABLE `catalog_product_website` DISABLE KEYS */;
+INSERT INTO `catalog_product_website` VALUES ('1',1),('1',4),('2',2),('2',4);
+/*!40000 ALTER TABLE `catalog_product_website` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `catalog_url_rewrite_product_category`
 --
 
@@ -1664,6 +1874,16 @@ CREATE TABLE `catalog_url_rewrite_product_category` (
   KEY `CAT_URL_REWRITE_PRD_CTGR_PRD_ID_CAT_PRD_ENTT_ENTT_ID` (`product_id`),
   KEY `FK_BB79E64705D7F17FE181F23144528FC8` (`url_rewrite_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='url_rewrite_relation';
+
+--
+-- Dumping data for table `catalog_url_rewrite_product_category`
+--
+
+LOCK TABLES `catalog_url_rewrite_product_category` WRITE;
+/*!40000 ALTER TABLE `catalog_url_rewrite_product_category` DISABLE KEYS */;
+INSERT INTO `catalog_url_rewrite_product_category` VALUES ('28','11','2'),('29','3','2'),('31','10','2'),('32','6','2'),('42','9','1'),('44','5','1'),('46','10','1'),('47','6','1');
+/*!40000 ALTER TABLE `catalog_url_rewrite_product_category` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `cataloginventory_stock`
@@ -1724,7 +1944,17 @@ CREATE TABLE `cataloginventory_stock_item` (
   UNIQUE KEY `CATALOGINVENTORY_STOCK_ITEM_PRODUCT_ID_STOCK_ID` (`product_id`,`stock_id`),
   KEY `CATALOGINVENTORY_STOCK_ITEM_WEBSITE_ID` (`website_id`),
   KEY `CATALOGINVENTORY_STOCK_ITEM_STOCK_ID` (`stock_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Item';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Item';
+
+--
+-- Dumping data for table `cataloginventory_stock_item`
+--
+
+LOCK TABLES `cataloginventory_stock_item` WRITE;
+/*!40000 ALTER TABLE `cataloginventory_stock_item` DISABLE KEYS */;
+INSERT INTO `cataloginventory_stock_item` VALUES ('1','1',1,'98.0000','0.0000',1,0,0,1,'1.0000',1,'10000.0000',1,1,NULL,'1.0000',1,1,1,0,1,'1.0000',1,0,0,0),('2','2',1,'50.0000','0.0000',1,0,0,1,'1.0000',1,'10000.0000',1,1,NULL,'1.0000',1,1,1,0,1,'1.0000',1,0,0,0);
+/*!40000 ALTER TABLE `cataloginventory_stock_item` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `cataloginventory_stock_status`
@@ -1742,6 +1972,16 @@ CREATE TABLE `cataloginventory_stock_status` (
   KEY `CATALOGINVENTORY_STOCK_STATUS_WEBSITE_ID` (`website_id`),
   KEY `CATALOGINVENTORY_STOCK_STATUS_STOCK_STATUS` (`stock_status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Status';
+
+--
+-- Dumping data for table `cataloginventory_stock_status`
+--
+
+LOCK TABLES `cataloginventory_stock_status` WRITE;
+/*!40000 ALTER TABLE `cataloginventory_stock_status` DISABLE KEYS */;
+INSERT INTO `cataloginventory_stock_status` VALUES ('1',0,1,'98.0000',1),('2',0,1,'50.0000',1);
+/*!40000 ALTER TABLE `cataloginventory_stock_status` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `cataloginventory_stock_status_idx`
@@ -1775,6 +2015,16 @@ CREATE TABLE `cataloginventory_stock_status_replica` (
   KEY `CATALOGINVENTORY_STOCK_STATUS_WEBSITE_ID` (`website_id`),
   KEY `CATALOGINVENTORY_STOCK_STATUS_STOCK_STATUS` (`stock_status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Status';
+
+--
+-- Dumping data for table `cataloginventory_stock_status_replica`
+--
+
+LOCK TABLES `cataloginventory_stock_status_replica` WRITE;
+/*!40000 ALTER TABLE `cataloginventory_stock_status_replica` DISABLE KEYS */;
+INSERT INTO `cataloginventory_stock_status_replica` VALUES ('1',0,1,'98.0000',1),('2',0,1,'50.0000',1);
+/*!40000 ALTER TABLE `cataloginventory_stock_status_replica` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `cataloginventory_stock_status_tmp`
@@ -1974,6 +2224,88 @@ CREATE TABLE `catalogsearch_fulltext_scope1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='catalogsearch_fulltext_scope1_tmp';
 
 --
+-- Dumping data for table `catalogsearch_fulltext_scope1`
+--
+
+LOCK TABLES `catalogsearch_fulltext_scope1` WRITE;
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope1` DISABLE KEYS */;
+INSERT INTO `catalogsearch_fulltext_scope1` VALUES ('1','73','Toothbrush'),('1','74','thtbrsh');
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `catalogsearch_fulltext_scope2`
+--
+
+DROP TABLE IF EXISTS `catalogsearch_fulltext_scope2`;
+CREATE TABLE `catalogsearch_fulltext_scope2` (
+  `entity_id` int(10) unsigned NOT NULL COMMENT 'Entity ID',
+  `attribute_id` int(10) unsigned NOT NULL COMMENT 'Attribute_id',
+  `data_index` longtext COMMENT 'Data index',
+  PRIMARY KEY (`entity_id`,`attribute_id`),
+  FULLTEXT KEY `FTI_FULLTEXT_DATA_INDEX` (`data_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='catalogsearch_fulltext_scope2_tmp';
+
+--
+-- Dumping data for table `catalogsearch_fulltext_scope2`
+--
+
+LOCK TABLES `catalogsearch_fulltext_scope2` WRITE;
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope2` DISABLE KEYS */;
+INSERT INTO `catalogsearch_fulltext_scope2` VALUES ('2','73','Vacuum Cleaner'),('2','74','vaclnr');
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `catalogsearch_fulltext_scope3`
+--
+
+DROP TABLE IF EXISTS `catalogsearch_fulltext_scope3`;
+CREATE TABLE `catalogsearch_fulltext_scope3` (
+  `entity_id` int(10) unsigned NOT NULL COMMENT 'Entity ID',
+  `attribute_id` int(10) unsigned NOT NULL COMMENT 'Attribute_id',
+  `data_index` longtext COMMENT 'Data index',
+  PRIMARY KEY (`entity_id`,`attribute_id`),
+  FULLTEXT KEY `FTI_FULLTEXT_DATA_INDEX` (`data_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='catalogsearch_fulltext_scope3_tmp';
+
+--
+-- Table structure for table `catalogsearch_fulltext_scope4`
+--
+
+DROP TABLE IF EXISTS `catalogsearch_fulltext_scope4`;
+CREATE TABLE `catalogsearch_fulltext_scope4` (
+  `entity_id` int(10) unsigned NOT NULL COMMENT 'Entity ID',
+  `attribute_id` int(10) unsigned NOT NULL COMMENT 'Attribute_id',
+  `data_index` longtext COMMENT 'Data index',
+  PRIMARY KEY (`entity_id`,`attribute_id`),
+  FULLTEXT KEY `FTI_FULLTEXT_DATA_INDEX` (`data_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='catalogsearch_fulltext_scope4_tmp';
+
+--
+-- Dumping data for table `catalogsearch_fulltext_scope4`
+--
+
+LOCK TABLES `catalogsearch_fulltext_scope4` WRITE;
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope4` DISABLE KEYS */;
+INSERT INTO `catalogsearch_fulltext_scope4` VALUES ('1','73','Toothbrush'),('1','74','thtbrsh'),('2','73','Vacuum Cleaner'),('2','74','vaclnr');
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope4` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `catalogsearch_fulltext_scope5`
+--
+
+DROP TABLE IF EXISTS `catalogsearch_fulltext_scope5`;
+CREATE TABLE `catalogsearch_fulltext_scope5` (
+  `entity_id` int(10) unsigned NOT NULL COMMENT 'Entity ID',
+  `attribute_id` int(10) unsigned NOT NULL COMMENT 'Attribute_id',
+  `data_index` longtext COMMENT 'Data index',
+  PRIMARY KEY (`entity_id`,`attribute_id`),
+  FULLTEXT KEY `FTI_FULLTEXT_DATA_INDEX` (`data_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='catalogsearch_fulltext_scope5_tmp';
+
+--
 -- Table structure for table `checkout_agreement`
 --
 
@@ -2106,7 +2438,7 @@ CREATE TABLE `core_config_data` (
   `value` text COMMENT 'Config Value',
   PRIMARY KEY (`config_id`),
   UNIQUE KEY `CORE_CONFIG_DATA_SCOPE_SCOPE_ID_PATH` (`scope`,`scope_id`,`path`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='Config Data';
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8 COMMENT='Config Data';
 
 --
 -- Dumping data for table `core_config_data`
@@ -2114,7 +2446,7 @@ CREATE TABLE `core_config_data` (
 
 LOCK TABLES `core_config_data` WRITE;
 /*!40000 ALTER TABLE `core_config_data` DISABLE KEYS */;
-INSERT INTO `core_config_data` VALUES ('1','default','0','general/region/display_all','1'),('2','default','0','general/region/state_required','AT,BR,CA,CH,EE,ES,FI,HR,LT,LV,RO,US'),('3','default','0','catalog/category/root_id','2'),('4','default','0','analytics/subscription/enabled','1'),('5','default','0','crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),('6','website','0','connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),('7','website','0','connector_configuration/catalog_sync/catalog_type','simple,virtual,downloadable,bundle,grouped,configurable'),('8','website','0','connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),('9','default','0','web/seo/use_rewrites','1'),('10','default','0','web/unsecure/base_url','http://global.store:8077/'),('11','default','0','web/unsecure/base_static_url',NULL),('12','default','0','web/unsecure/base_media_url',NULL),('13','default','0','web/secure/base_url','http://global.store:8077/'),('14','default','0','web/secure/base_static_url',NULL),('15','default','0','web/secure/base_media_url',NULL),('16','default','0','web/cookie/cookie_path',NULL),('17','default','0','web/cookie/cookie_domain',NULL),('18','default','0','web/cookie/cookie_httponly','1');
+INSERT INTO `core_config_data` VALUES ('1','default','0','general/region/display_all','1'),('2','default','0','general/region/state_required','AT,BR,CA,CH,EE,ES,FI,HR,LT,LV,RO,US'),('3','default','0','catalog/category/root_id','2'),('4','default','0','analytics/subscription/enabled','1'),('5','default','0','crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),('6','website','0','connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),('7','website','0','connector_configuration/catalog_sync/catalog_type','simple,virtual,downloadable,bundle,grouped,configurable'),('8','website','0','connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),('9','default','0','web/seo/use_rewrites','1'),('10','default','0','web/unsecure/base_url','http://global.store:8077/'),('11','default','0','web/unsecure/base_static_url',NULL),('12','default','0','web/unsecure/base_media_url',NULL),('13','default','0','web/secure/base_url','http://global.store:8077/'),('14','default','0','web/secure/base_static_url',NULL),('15','default','0','web/secure/base_media_url',NULL),('16','default','0','web/cookie/cookie_path',NULL),('17','default','0','web/cookie/cookie_domain',NULL),('18','default','0','web/cookie/cookie_httponly','1'),('19','stores','1','web/unsecure/base_url','http://ph.global.store:8077/'),('20','stores','2','web/unsecure/base_url','http://gb.global.store:8077/'),('21','stores','3','web/unsecure/base_url','http://cn.global.store:8077/'),('22','stores','4','web/unsecure/base_url','http://us.global.store:8077/'),('23','stores','5','web/unsecure/base_url','http://au.global.store:8077/'),('27','websites','1','currency/options/default','PHP'),('28','websites','1','currency/options/allow','PHP'),('29','websites','2','currency/options/default','GBP'),('30','websites','2','currency/options/allow','GBP'),('31','websites','3','currency/options/default','CNY'),('32','websites','3','currency/options/allow','CNY'),('33','websites','4','currency/options/default','USD'),('34','websites','4','currency/options/allow','USD'),('35','websites','5','currency/options/default','AUD'),('36','websites','5','currency/options/allow','AUD'),('37','websites','1','general/country/default','PH'),('39','websites','2','general/country/default','GB'),('40','websites','3','general/country/default','CN'),('41','websites','4','general/country/default','US'),('42','websites','5','general/country/default','AU'),('43','default','0','currency/options/base','PHP'),('45','default','0','currency/options/allow','AUD,GBP,CNY,PHP,USD'),('46','default','0','currency/yahoofinance/timeout','100'),('47','default','0','currency/fixerio/timeout','100'),('48','default','0','currency/import/service','fixerio'),('49','default','0','crontab/default/jobs/currency_rates_update/schedule/cron_expr','0 0 * * *'),('50','default','0','currency/import/time','00,00,00'),('51','default','0','currency/import/frequency','D'),('52','default','0','currency/import/error_email',NULL),('53','default','0','catalog/frontend/list_allow_all','0'),('54','default','0','catalog/frontend/flat_catalog_product','0'),('55','default','0','catalog/productalert_cron/frequency','D'),('56','default','0','crontab/default/jobs/catalog_product_alert/schedule/cron_expr','0 0 * * *'),('57','default','0','crontab/default/jobs/catalog_product_alert/run/model',NULL),('58','default','0','catalog/productalert_cron/time','00,00,00'),('59','default','0','catalog/productalert_cron/error_email',NULL),('60','default','0','catalog/product_video/youtube_api_key',NULL),('61','default','0','catalog/price/scope','0'),('62','default','0','catalog/downloadable/shareable','0'),('63','default','0','catalog/downloadable/content_disposition','inline'),('64','default','0','catalog/custom_options/use_calendar','0'),('65','default','0','catalog/custom_options/year_range',','),('66','default','0','catalog/placeholder/image_placeholder',NULL),('67','default','0','catalog/placeholder/small_image_placeholder',NULL),('68','default','0','catalog/placeholder/swatch_image_placeholder',NULL),('69','default','0','catalog/placeholder/thumbnail_placeholder',NULL),('70','default','0','currency/import/enabled','0'),('71','websites','2','currency/options/base','GBP'),('72','websites','3','currency/options/base','CNY'),('73','websites','4','currency/options/base','USD'),('74','websites','5','currency/options/base','AUD'),('75','websites','1','general/locale/timezone','Asia/Manila'),('76','websites','1','general/locale/code','en_US'),('77','websites','1','general/locale/weight_unit','kgs'),('78','websites','2','general/locale/timezone','Europe/London'),('79','websites','2','general/locale/code','en_GB'),('80','websites','3','general/locale/timezone','Asia/Shanghai'),('81','websites','3','general/locale/code','en_US'),('82','websites','3','general/locale/weight_unit','kgs'),('83','websites','4','general/locale/timezone','America/New_York'),('84','websites','4','general/locale/weight_unit','kgs'),('85','websites','5','general/locale/timezone','Australia/Sydney'),('86','websites','5','general/locale/code','en_AU');
 /*!40000 ALTER TABLE `core_config_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2542,7 +2874,7 @@ CREATE TABLE `customer_visitor` (
   PRIMARY KEY (`visitor_id`),
   KEY `CUSTOMER_VISITOR_CUSTOMER_ID` (`customer_id`),
   KEY `CUSTOMER_VISITOR_LAST_VISIT_AT` (`last_visit_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
 
 --
 -- Dumping data for table `customer_visitor`
@@ -2550,7 +2882,7 @@ CREATE TABLE `customer_visitor` (
 
 LOCK TABLES `customer_visitor` WRITE;
 /*!40000 ALTER TABLE `customer_visitor` DISABLE KEYS */;
-INSERT INTO `customer_visitor` VALUES (1,NULL,'3j5ot89jaedm72j6toc2pv0dn0','2018-02-27 10:05:21'),(2,NULL,'3dnpmpi4sn35dbm26v2cks7rc5','2018-02-27 10:07:48'),(3,NULL,'r8o07ksm0lgno4oj6d74i68be2','2018-02-27 10:08:36'),(4,NULL,'ooh71j3pha1g00f1kjfdkkhab6','2018-02-27 10:19:17'),(5,NULL,'9mvt7md5th71rcaq9bculuup86','2018-02-27 10:23:10'),(6,NULL,'ntlacusb1ce9cv4v239h4fufj0','2018-02-27 10:31:21'),(7,NULL,'r30u0ph13rs9c2s8298pkn7g86','2018-02-27 10:26:56');
+INSERT INTO `customer_visitor` VALUES (1,NULL,'3j5ot89jaedm72j6toc2pv0dn0','2018-02-27 10:05:21'),(2,NULL,'3dnpmpi4sn35dbm26v2cks7rc5','2018-02-27 10:07:48'),(3,NULL,'r8o07ksm0lgno4oj6d74i68be2','2018-02-27 10:08:36'),(4,NULL,'ooh71j3pha1g00f1kjfdkkhab6','2018-02-27 10:19:17'),(5,NULL,'9mvt7md5th71rcaq9bculuup86','2018-02-27 10:23:10'),(6,NULL,'ntlacusb1ce9cv4v239h4fufj0','2018-02-27 10:31:21'),(7,NULL,'r30u0ph13rs9c2s8298pkn7g86','2018-02-27 10:26:56'),(8,NULL,'2emrtfa17rf9hmmld0phel9p65','2018-02-27 11:47:53'),(9,NULL,'7qajne65n7sq46vk35bevc8dr1','2018-02-27 11:47:57'),(10,NULL,'vsr99s2q8b650k6vogqiglppn7','2018-02-28 02:36:04'),(11,NULL,'e1vu7mb5j9ku53673ip11hk2v5','2018-02-28 02:38:01'),(12,NULL,'qma2c4cf2o4la3496knqvd4s81','2018-02-28 02:38:06'),(13,NULL,'h3g7nvp12f70bkh1r5o50rg882','2018-02-28 02:38:13'),(14,NULL,'53vam49f163q3090smiidm9nb0','2018-02-28 02:38:16'),(15,NULL,'glsbg4cbqec4aaonnm0v68edl0','2018-02-28 02:38:20'),(16,NULL,'3vkegustq9u4817quo6r5obfa3','2018-02-28 02:38:24'),(17,NULL,'9kggdijahut3kgcqt8ts4n6vk6','2018-02-28 02:38:28'),(18,NULL,'4eii114tpd67pci35au2k8on25','2018-02-28 02:38:31'),(19,NULL,'upn1io8ue3uk3n9hlqn0ura397','2018-02-28 02:39:05'),(20,NULL,'krtum44f2bm8lpe5u5313pin85','2018-02-28 10:56:16'),(21,NULL,'uuild25sl35fgtbnfb5njv19h3','2018-02-28 10:56:20'),(22,NULL,'ot02cd45nspo2csvsj932bi1g4','2018-02-28 10:56:20'),(23,NULL,'pktv83v4ouu9pje95l383d6h96','2018-02-28 10:58:37'),(24,NULL,'puhdrngqb5vett4ooot11vh5i7','2018-02-28 11:05:25'),(25,NULL,'d6oc9csqa8d2piqdr0142sq4i2','2018-02-28 11:01:23'),(26,NULL,'deufr6v08lssk10din0eu54pk6','2018-02-28 11:05:31'),(27,NULL,'fi34g0j3f6nd08etp8s3jj3pi1','2018-02-28 11:05:34'),(28,NULL,'ilgoir53heo2f17n7npq22lau0','2018-02-28 11:05:37'),(29,NULL,'occqr9j15k10ne6hcniq2q40q5','2018-02-28 11:05:37'),(30,NULL,'kqidn2vaemt7ogrde4trmcuvo0','2018-02-28 11:05:38'),(31,NULL,'r3r3rgrrh4u7qnt4ou0f8dcbn2','2018-02-28 11:05:42'),(32,NULL,'4lfcniohj06furl9dlgiu0s210','2018-02-28 11:05:42'),(33,NULL,'m583sv21ngt079cto720jqm6s6','2018-02-28 11:07:32'),(34,NULL,'l9gmtobmg2j2f0d6efduaitvo3','2018-02-28 11:17:39'),(35,NULL,'c5jcd45fd2qnmj3qt4ulsh5574','2018-02-28 11:20:13'),(36,NULL,'qpococ23g969mnsiv7asikmd80','2018-03-01 04:19:23'),(37,NULL,'jbmr3so62pl06al74bk8k62pv6','2018-03-01 05:38:54'),(38,NULL,'t8iii8ciuun0onarpjkbi81967','2018-03-01 05:39:01'),(39,NULL,'2odbpt663ss5jm3craenjjc836','2018-03-01 05:39:01'),(40,NULL,'9rd4c8m9b6io42ooinsb7g0183','2018-03-01 05:49:30'),(41,NULL,'bq3l15usvmis111q5e6fohvff3','2018-03-01 05:50:28'),(42,NULL,'ff6sev3ukf1lvtlh6nvqjh6h31','2018-03-01 05:50:31'),(43,NULL,'aoqb5jatmaag2eptgc5rst7b40','2018-03-01 05:50:31'),(44,NULL,'5ugtf1kqglilp34j240e6ka1o5','2018-03-01 05:50:32'),(45,NULL,'rmbdpgpucjtp7k6ighctb99re2','2018-03-01 05:50:36'),(46,NULL,'r8ceitu8gv2ev5gfr21k3m60s4','2018-03-01 05:50:39'),(47,NULL,'rqj88sk92psgjs0ditgj3ogac6','2018-03-01 05:52:02');
 /*!40000 ALTER TABLE `customer_visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2593,7 +2925,7 @@ CREATE TABLE `design_config_grid_flat` (
 
 LOCK TABLES `design_config_grid_flat` WRITE;
 /*!40000 ALTER TABLE `design_config_grid_flat` DISABLE KEYS */;
-INSERT INTO `design_config_grid_flat` VALUES ('0',NULL,NULL,NULL,''),('1','1',NULL,NULL,''),('2','1','1','1','');
+INSERT INTO `design_config_grid_flat` VALUES ('0',NULL,NULL,NULL,''),('1','1',NULL,NULL,''),('2','1','1','1',''),('3','2',NULL,NULL,''),('4','2','2','2',''),('5','3',NULL,NULL,''),('6','3','3','3',''),('7','4',NULL,NULL,''),('8','4','4','4',''),('9','5',NULL,NULL,''),('10','5','5','5','');
 /*!40000 ALTER TABLE `design_config_grid_flat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2699,7 +3031,7 @@ CREATE TABLE `directory_currency_rate` (
 
 LOCK TABLES `directory_currency_rate` WRITE;
 /*!40000 ALTER TABLE `directory_currency_rate` DISABLE KEYS */;
-INSERT INTO `directory_currency_rate` VALUES ('EUR','EUR','1.000000000000'),('EUR','USD','1.415000000000'),('USD','EUR','0.706700000000'),('USD','USD','1.000000000000');
+INSERT INTO `directory_currency_rate` VALUES ('AUD','AUD','1.000000000000'),('AUD','CNY','4.942400000000'),('AUD','GBP','0.565420000000'),('AUD','PHP','40.699000000000'),('AUD','USD','0.781100000000'),('CNY','AUD','0.202330000000'),('CNY','CNY','1.000000000000'),('CNY','GBP','0.114400000000'),('CNY','PHP','8.234600000000'),('CNY','USD','0.158040000000'),('EUR','EUR','1.000000000000'),('EUR','USD','1.415000000000'),('GBP','AUD','1.768600000000'),('GBP','CNY','8.741200000000'),('GBP','GBP','1.000000000000'),('GBP','PHP','71.980000000000'),('GBP','USD','1.381400000000'),('PHP','AUD','0.024571000000'),('PHP','CNY','0.121440000000'),('PHP','GBP','0.013893000000'),('PHP','PHP','1.000000000000'),('PHP','USD','0.019192000000'),('USD','AUD','1.280300000000'),('USD','CNY','6.327600000000'),('USD','EUR','0.706700000000'),('USD','GBP','0.723880000000'),('USD','PHP','52.105000000000'),('USD','USD','1.000000000000');
 /*!40000 ALTER TABLE `directory_currency_rate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2868,7 +3200,7 @@ CREATE TABLE `eav_attribute` (
 
 LOCK TABLES `eav_attribute` WRITE;
 /*!40000 ALTER TABLE `eav_attribute` DISABLE KEYS */;
-INSERT INTO `eav_attribute` VALUES (1,1,'website_id',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Website','static',NULL,NULL,'select','Associate to Website',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Source\\Website',1,0,NULL,0,NULL),(2,1,'store_id',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Store','static',NULL,NULL,'select','Create In',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Source\\Store',1,0,NULL,0,NULL),(3,1,'created_in',NULL,NULL,'static',NULL,NULL,'text','Created From',NULL,NULL,0,0,NULL,0,NULL),(4,1,'prefix',NULL,NULL,'static',NULL,NULL,'text','Name Prefix',NULL,NULL,0,0,NULL,0,NULL),(5,1,'firstname',NULL,NULL,'static',NULL,NULL,'text','First Name',NULL,NULL,1,0,NULL,0,NULL),(6,1,'middlename',NULL,NULL,'static',NULL,NULL,'text','Middle Name/Initial',NULL,NULL,0,0,NULL,0,NULL),(7,1,'lastname',NULL,NULL,'static',NULL,NULL,'text','Last Name',NULL,NULL,1,0,NULL,0,NULL),(8,1,'suffix',NULL,NULL,'static',NULL,NULL,'text','Name Suffix',NULL,NULL,0,0,NULL,0,NULL),(9,1,'email',NULL,NULL,'static',NULL,NULL,'text','Email',NULL,NULL,1,0,NULL,0,NULL),(10,1,'group_id',NULL,NULL,'static',NULL,NULL,'select','Group',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Source\\Group',1,0,NULL,0,NULL),(11,1,'dob',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','static',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Frontend\\Datetime','date','Date of Birth',NULL,NULL,0,0,NULL,0,NULL),(12,1,'password_hash',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Password','static',NULL,NULL,'hidden',NULL,NULL,NULL,0,0,NULL,0,NULL),(13,1,'rp_token',NULL,NULL,'static',NULL,NULL,'hidden',NULL,NULL,NULL,0,0,NULL,0,NULL),(14,1,'rp_token_created_at',NULL,NULL,'static',NULL,NULL,'date',NULL,NULL,NULL,0,0,NULL,0,NULL),(15,1,'default_billing',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Billing','static',NULL,NULL,'text','Default Billing Address',NULL,NULL,0,0,NULL,0,NULL),(16,1,'default_shipping',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Shipping','static',NULL,NULL,'text','Default Shipping Address',NULL,NULL,0,0,NULL,0,NULL),(17,1,'taxvat',NULL,NULL,'static',NULL,NULL,'text','Tax/VAT Number',NULL,NULL,0,0,NULL,0,NULL),(18,1,'confirmation',NULL,NULL,'static',NULL,NULL,'text','Is Confirmed',NULL,NULL,0,0,NULL,0,NULL),(19,1,'created_at',NULL,NULL,'static',NULL,NULL,'date','Created At',NULL,NULL,0,0,NULL,0,NULL),(20,1,'gender',NULL,NULL,'static',NULL,NULL,'select','Gender',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Table',0,0,NULL,0,NULL),(21,1,'disable_auto_group_change',NULL,'Magento\\Customer\\Model\\Attribute\\Backend\\Data\\Boolean','static',NULL,NULL,'boolean','Disable Automatic Group Change Based on VAT ID',NULL,NULL,0,0,NULL,0,NULL),(22,2,'prefix',NULL,NULL,'static',NULL,NULL,'text','Name Prefix',NULL,NULL,0,0,NULL,0,NULL),(23,2,'firstname',NULL,NULL,'static',NULL,NULL,'text','First Name',NULL,NULL,1,0,NULL,0,NULL),(24,2,'middlename',NULL,NULL,'static',NULL,NULL,'text','Middle Name/Initial',NULL,NULL,0,0,NULL,0,NULL),(25,2,'lastname',NULL,NULL,'static',NULL,NULL,'text','Last Name',NULL,NULL,1,0,NULL,0,NULL),(26,2,'suffix',NULL,NULL,'static',NULL,NULL,'text','Name Suffix',NULL,NULL,0,0,NULL,0,NULL),(27,2,'company',NULL,NULL,'static',NULL,NULL,'text','Company',NULL,NULL,0,0,NULL,0,NULL),(28,2,'street',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\DefaultBackend','static',NULL,NULL,'multiline','Street Address',NULL,NULL,1,0,NULL,0,NULL),(29,2,'city',NULL,NULL,'static',NULL,NULL,'text','City',NULL,NULL,1,0,NULL,0,NULL),(30,2,'country_id',NULL,NULL,'static',NULL,NULL,'select','Country',NULL,'Magento\\Customer\\Model\\ResourceModel\\Address\\Attribute\\Source\\Country',1,0,NULL,0,NULL),(31,2,'region',NULL,'Magento\\Customer\\Model\\ResourceModel\\Address\\Attribute\\Backend\\Region','static',NULL,NULL,'text','State/Province',NULL,NULL,0,0,NULL,0,NULL),(32,2,'region_id',NULL,NULL,'static',NULL,NULL,'hidden','State/Province',NULL,'Magento\\Customer\\Model\\ResourceModel\\Address\\Attribute\\Source\\Region',0,0,NULL,0,NULL),(33,2,'postcode',NULL,NULL,'static',NULL,NULL,'text','Zip/Postal Code',NULL,NULL,0,0,NULL,0,NULL),(34,2,'telephone',NULL,NULL,'static',NULL,NULL,'text','Phone Number',NULL,NULL,1,0,NULL,0,NULL),(35,2,'fax',NULL,NULL,'static',NULL,NULL,'text','Fax',NULL,NULL,0,0,NULL,0,NULL),(36,2,'vat_id',NULL,NULL,'static',NULL,NULL,'text','VAT Number',NULL,NULL,0,0,NULL,0,NULL),(37,2,'vat_is_valid',NULL,NULL,'static',NULL,NULL,'text','VAT number validity',NULL,NULL,0,0,NULL,0,NULL),(38,2,'vat_request_id',NULL,NULL,'static',NULL,NULL,'text','VAT number validation request ID',NULL,NULL,0,0,NULL,0,NULL),(39,2,'vat_request_date',NULL,NULL,'static',NULL,NULL,'text','VAT number validation request date',NULL,NULL,0,0,NULL,0,NULL),(40,2,'vat_request_success',NULL,NULL,'static',NULL,NULL,'text','VAT number validation request success',NULL,NULL,0,0,NULL,0,NULL),(41,1,'updated_at',NULL,NULL,'static',NULL,NULL,'date','Updated At',NULL,NULL,0,0,NULL,0,NULL),(42,1,'failures_num',NULL,NULL,'static',NULL,NULL,'hidden','Failures Number',NULL,NULL,0,0,NULL,0,NULL),(43,1,'first_failure',NULL,NULL,'static',NULL,NULL,'date','First Failure Date',NULL,NULL,0,0,NULL,0,NULL),(44,1,'lock_expires',NULL,NULL,'static',NULL,NULL,'date','Failures Number',NULL,NULL,0,0,NULL,0,NULL),(45,3,'name',NULL,NULL,'varchar',NULL,NULL,'text','Name',NULL,NULL,1,0,NULL,0,NULL),(46,3,'is_active',NULL,NULL,'int',NULL,NULL,'select','Is Active',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',1,0,NULL,0,NULL),(47,3,'description',NULL,NULL,'text',NULL,NULL,'textarea','Description',NULL,NULL,0,0,NULL,0,NULL),(48,3,'image',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Backend\\Image','varchar',NULL,NULL,'image','Image',NULL,NULL,0,0,NULL,0,NULL),(49,3,'meta_title',NULL,NULL,'varchar',NULL,NULL,'text','Page Title',NULL,NULL,0,0,NULL,0,NULL),(50,3,'meta_keywords',NULL,NULL,'text',NULL,NULL,'textarea','Meta Keywords',NULL,NULL,0,0,NULL,0,NULL),(51,3,'meta_description',NULL,NULL,'text',NULL,NULL,'textarea','Meta Description',NULL,NULL,0,0,NULL,0,NULL),(52,3,'display_mode',NULL,NULL,'varchar',NULL,NULL,'select','Display Mode',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Mode',0,0,NULL,0,NULL),(53,3,'landing_page',NULL,NULL,'int',NULL,NULL,'select','CMS Block',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Page',0,0,NULL,0,NULL),(54,3,'is_anchor',NULL,NULL,'int',NULL,NULL,'select','Is Anchor',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',0,0,'1',0,NULL),(55,3,'path',NULL,NULL,'static',NULL,NULL,'text','Path',NULL,NULL,0,0,NULL,0,NULL),(56,3,'position',NULL,NULL,'static',NULL,NULL,'text','Position',NULL,NULL,0,0,NULL,0,NULL),(57,3,'all_children',NULL,NULL,'text',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(58,3,'path_in_store',NULL,NULL,'text',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(59,3,'children',NULL,NULL,'text',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(60,3,'custom_design',NULL,NULL,'varchar',NULL,NULL,'select','Custom Design',NULL,'Magento\\Theme\\Model\\Theme\\Source\\Theme',0,0,NULL,0,NULL),(61,3,'custom_design_from','Magento\\Catalog\\Model\\ResourceModel\\Eav\\Attribute','Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Frontend\\Datetime','date','Active From',NULL,NULL,0,0,NULL,0,NULL),(62,3,'custom_design_to',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Active To',NULL,NULL,0,0,NULL,0,NULL),(63,3,'page_layout',NULL,NULL,'varchar',NULL,NULL,'select','Page Layout',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Layout',0,0,NULL,0,NULL),(64,3,'custom_layout_update',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Customlayoutupdate','text',NULL,NULL,'textarea','Custom Layout Update',NULL,NULL,0,0,NULL,0,NULL),(65,3,'level',NULL,NULL,'static',NULL,NULL,'text','Level',NULL,NULL,0,0,NULL,0,NULL),(66,3,'children_count',NULL,NULL,'static',NULL,NULL,'text','Children Count',NULL,NULL,0,0,NULL,0,NULL),(67,3,'available_sort_by',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Backend\\Sortby','text',NULL,NULL,'multiselect','Available Product Listing Sort By',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Sortby',1,0,NULL,0,NULL),(68,3,'default_sort_by',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Backend\\Sortby','varchar',NULL,NULL,'select','Default Product Listing Sort By',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Sortby',1,0,NULL,0,NULL),(69,3,'include_in_menu',NULL,NULL,'int',NULL,NULL,'select','Include in Navigation Menu',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',1,0,'1',0,NULL),(70,3,'custom_use_parent_settings',NULL,NULL,'int',NULL,NULL,'select','Use Parent Category Settings',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',0,0,NULL,0,NULL),(71,3,'custom_apply_to_products',NULL,NULL,'int',NULL,NULL,'select','Apply To Products',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',0,0,NULL,0,NULL),(72,3,'filter_price_range',NULL,NULL,'decimal',NULL,NULL,'text','Layered Navigation Price Step',NULL,NULL,0,0,NULL,0,NULL),(73,4,'name',NULL,NULL,'varchar',NULL,NULL,'text','Product Name','validate-length maximum-length-255',NULL,1,0,NULL,0,NULL),(74,4,'sku',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Sku','static',NULL,NULL,'text','SKU','validate-length maximum-length-64',NULL,1,0,NULL,1,NULL),(75,4,'description',NULL,NULL,'text',NULL,NULL,'textarea','Description',NULL,NULL,0,0,NULL,0,NULL),(76,4,'short_description',NULL,NULL,'text',NULL,NULL,'textarea','Short Description',NULL,NULL,0,0,NULL,0,NULL),(77,4,'price',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Price',NULL,NULL,1,0,NULL,0,NULL),(78,4,'special_price',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Special Price',NULL,NULL,0,0,NULL,0,NULL),(79,4,'special_from_date',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,NULL,'date','Special Price From Date',NULL,NULL,0,0,NULL,0,NULL),(80,4,'special_to_date',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Special Price To Date',NULL,NULL,0,0,NULL,0,NULL),(81,4,'cost',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Cost',NULL,NULL,0,1,NULL,0,NULL),(82,4,'weight',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Weight','decimal',NULL,NULL,'weight','Weight',NULL,NULL,0,0,NULL,0,NULL),(83,4,'manufacturer',NULL,NULL,'int',NULL,NULL,'select','Manufacturer',NULL,NULL,0,1,NULL,0,NULL),(84,4,'meta_title',NULL,NULL,'varchar',NULL,NULL,'text','Meta Title',NULL,NULL,0,0,NULL,0,NULL),(85,4,'meta_keyword',NULL,NULL,'text',NULL,NULL,'textarea','Meta Keywords',NULL,NULL,0,0,NULL,0,NULL),(86,4,'meta_description',NULL,NULL,'varchar',NULL,NULL,'textarea','Meta Description',NULL,NULL,0,0,NULL,0,'Maximum 255 chars. Meta Description should optimally be between 150-160 characters'),(87,4,'image',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Base',NULL,NULL,0,0,NULL,0,NULL),(88,4,'small_image',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Small',NULL,NULL,0,0,NULL,0,NULL),(89,4,'thumbnail',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Thumbnail',NULL,NULL,0,0,NULL,0,NULL),(90,4,'media_gallery',NULL,NULL,'static',NULL,NULL,'gallery','Media Gallery',NULL,NULL,0,0,NULL,0,NULL),(91,4,'old_id',NULL,NULL,'int',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(92,4,'tier_price',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Tierprice','decimal',NULL,NULL,'text','Tier Price',NULL,NULL,0,0,NULL,0,NULL),(93,4,'color',NULL,NULL,'int',NULL,NULL,'select','Color',NULL,NULL,0,1,NULL,0,NULL),(94,4,'news_from_date',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,NULL,'date','Set Product as New from Date',NULL,NULL,0,0,NULL,0,NULL),(95,4,'news_to_date',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Set Product as New to Date',NULL,NULL,0,0,NULL,0,NULL),(96,4,'gallery',NULL,NULL,'varchar',NULL,NULL,'gallery','Image Gallery',NULL,NULL,0,0,NULL,0,NULL),(97,4,'status',NULL,NULL,'int',NULL,NULL,'select','Enable Product',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Status',0,0,'1',0,NULL),(98,4,'minimal_price',NULL,NULL,'decimal',NULL,NULL,'price','Minimal Price',NULL,NULL,0,0,NULL,0,NULL),(99,4,'visibility',NULL,NULL,'int',NULL,NULL,'select','Visibility',NULL,'Magento\\Catalog\\Model\\Product\\Visibility',0,0,'4',0,NULL),(100,4,'custom_design',NULL,NULL,'varchar',NULL,NULL,'select','New Theme',NULL,'Magento\\Theme\\Model\\Theme\\Source\\Theme',0,0,NULL,0,NULL),(101,4,'custom_design_from',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,NULL,'date','Active From',NULL,NULL,0,0,NULL,0,NULL),(102,4,'custom_design_to',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Active To',NULL,NULL,0,0,NULL,0,NULL),(103,4,'custom_layout_update',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Customlayoutupdate','text',NULL,NULL,'textarea','Layout Update XML',NULL,NULL,0,0,NULL,0,NULL),(104,4,'page_layout',NULL,NULL,'varchar',NULL,NULL,'select','Layout',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Layout',0,0,NULL,0,NULL),(105,4,'category_ids',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Category','static',NULL,NULL,'text','Categories',NULL,NULL,0,0,NULL,0,NULL),(106,4,'options_container',NULL,NULL,'varchar',NULL,NULL,'select','Display Product Options In',NULL,'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Design\\Options\\Container',0,0,'container2',0,NULL),(107,4,'required_options',NULL,NULL,'static',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(108,4,'has_options',NULL,NULL,'static',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(109,4,'image_label',NULL,NULL,'varchar',NULL,NULL,'text','Image Label',NULL,NULL,0,0,NULL,0,NULL),(110,4,'small_image_label',NULL,NULL,'varchar',NULL,NULL,'text','Small Image Label',NULL,NULL,0,0,NULL,0,NULL),(111,4,'thumbnail_label',NULL,NULL,'varchar',NULL,NULL,'text','Thumbnail Label',NULL,NULL,0,0,NULL,0,NULL),(112,4,'created_at',NULL,NULL,'static',NULL,NULL,'date',NULL,NULL,NULL,1,0,NULL,0,NULL),(113,4,'updated_at',NULL,NULL,'static',NULL,NULL,'date',NULL,NULL,NULL,1,0,NULL,0,NULL),(114,4,'country_of_manufacture',NULL,NULL,'varchar',NULL,NULL,'select','Country of Manufacture',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Countryofmanufacture',0,0,NULL,0,NULL),(115,4,'quantity_and_stock_status',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Stock','int',NULL,NULL,'select','Quantity',NULL,'Magento\\CatalogInventory\\Model\\Source\\Stock',0,0,'1',0,NULL),(116,4,'custom_layout',NULL,NULL,'varchar',NULL,NULL,'select','New Layout',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Layout',0,0,NULL,0,NULL),(117,3,'url_key',NULL,NULL,'varchar',NULL,NULL,'text','URL Key',NULL,NULL,0,0,NULL,0,NULL),(118,3,'url_path',NULL,NULL,'varchar',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(119,4,'url_key',NULL,NULL,'varchar',NULL,NULL,'text','URL Key',NULL,NULL,0,0,NULL,0,NULL),(120,4,'url_path',NULL,NULL,'varchar',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(121,4,'msrp',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Manufacturer\'s Suggested Retail Price',NULL,NULL,0,0,NULL,0,NULL),(122,4,'msrp_display_actual_price_type',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Boolean','varchar',NULL,NULL,'select','Display Actual Price',NULL,'Magento\\Msrp\\Model\\Product\\Attribute\\Source\\Type\\Price',0,0,'0',0,NULL),(123,4,'links_purchased_separately',NULL,NULL,'int',NULL,NULL,NULL,'Links can be purchased separately',NULL,NULL,1,0,NULL,0,NULL),(124,4,'samples_title',NULL,NULL,'varchar',NULL,NULL,NULL,'Samples title',NULL,NULL,1,0,NULL,0,NULL),(125,4,'links_title',NULL,NULL,'varchar',NULL,NULL,NULL,'Links title',NULL,NULL,1,0,NULL,0,NULL),(126,4,'links_exist',NULL,NULL,'int',NULL,NULL,NULL,NULL,NULL,NULL,0,0,'0',0,NULL),(127,4,'price_type',NULL,NULL,'int',NULL,NULL,'boolean','Dynamic Price',NULL,NULL,1,0,'0',0,NULL),(128,4,'sku_type',NULL,NULL,'int',NULL,NULL,'boolean','Dynamic SKU',NULL,NULL,1,0,'0',0,NULL),(129,4,'weight_type',NULL,NULL,'int',NULL,NULL,'boolean','Dynamic Weight',NULL,NULL,1,0,'0',0,NULL),(130,4,'price_view',NULL,NULL,'int',NULL,NULL,'select','Price View',NULL,'Magento\\Bundle\\Model\\Product\\Attribute\\Source\\Price\\View',1,0,NULL,0,NULL),(131,4,'shipment_type',NULL,NULL,'int',NULL,NULL,'select','Ship Bundle Items',NULL,'Magento\\Bundle\\Model\\Product\\Attribute\\Source\\Shipment\\Type',1,0,'0',0,NULL),(132,4,'gift_message_available',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Boolean','varchar',NULL,NULL,'select','Allow Gift Message',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Boolean',0,0,NULL,0,NULL),(133,4,'swatch_image',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Swatch',NULL,NULL,0,0,NULL,0,NULL),(134,4,'tax_class_id',NULL,NULL,'int',NULL,NULL,'select','Tax Class',NULL,'Magento\\Tax\\Model\\TaxClass\\Source\\Product',0,0,'2',0,NULL);
+INSERT INTO `eav_attribute` VALUES (1,1,'website_id',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Website','static',NULL,NULL,'select','Associate to Website',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Source\\Website',1,0,NULL,0,NULL),(2,1,'store_id',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Store','static',NULL,NULL,'select','Create In',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Source\\Store',1,0,NULL,0,NULL),(3,1,'created_in',NULL,NULL,'static',NULL,NULL,'text','Created From',NULL,NULL,0,0,NULL,0,NULL),(4,1,'prefix',NULL,NULL,'static',NULL,NULL,'text','Name Prefix',NULL,NULL,0,0,NULL,0,NULL),(5,1,'firstname',NULL,NULL,'static',NULL,NULL,'text','First Name',NULL,NULL,1,0,NULL,0,NULL),(6,1,'middlename',NULL,NULL,'static',NULL,NULL,'text','Middle Name/Initial',NULL,NULL,0,0,NULL,0,NULL),(7,1,'lastname',NULL,NULL,'static',NULL,NULL,'text','Last Name',NULL,NULL,1,0,NULL,0,NULL),(8,1,'suffix',NULL,NULL,'static',NULL,NULL,'text','Name Suffix',NULL,NULL,0,0,NULL,0,NULL),(9,1,'email',NULL,NULL,'static',NULL,NULL,'text','Email',NULL,NULL,1,0,NULL,0,NULL),(10,1,'group_id',NULL,NULL,'static',NULL,NULL,'select','Group',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Source\\Group',1,0,NULL,0,NULL),(11,1,'dob',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','static',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Frontend\\Datetime','date','Date of Birth',NULL,NULL,0,0,NULL,0,NULL),(12,1,'password_hash',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Password','static',NULL,NULL,'hidden',NULL,NULL,NULL,0,0,NULL,0,NULL),(13,1,'rp_token',NULL,NULL,'static',NULL,NULL,'hidden',NULL,NULL,NULL,0,0,NULL,0,NULL),(14,1,'rp_token_created_at',NULL,NULL,'static',NULL,NULL,'date',NULL,NULL,NULL,0,0,NULL,0,NULL),(15,1,'default_billing',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Billing','static',NULL,NULL,'text','Default Billing Address',NULL,NULL,0,0,NULL,0,NULL),(16,1,'default_shipping',NULL,'Magento\\Customer\\Model\\Customer\\Attribute\\Backend\\Shipping','static',NULL,NULL,'text','Default Shipping Address',NULL,NULL,0,0,NULL,0,NULL),(17,1,'taxvat',NULL,NULL,'static',NULL,NULL,'text','Tax/VAT Number',NULL,NULL,0,0,NULL,0,NULL),(18,1,'confirmation',NULL,NULL,'static',NULL,NULL,'text','Is Confirmed',NULL,NULL,0,0,NULL,0,NULL),(19,1,'created_at',NULL,NULL,'static',NULL,NULL,'date','Created At',NULL,NULL,0,0,NULL,0,NULL),(20,1,'gender',NULL,NULL,'static',NULL,NULL,'select','Gender',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Table',0,0,NULL,0,NULL),(21,1,'disable_auto_group_change',NULL,'Magento\\Customer\\Model\\Attribute\\Backend\\Data\\Boolean','static',NULL,NULL,'boolean','Disable Automatic Group Change Based on VAT ID',NULL,NULL,0,0,NULL,0,NULL),(22,2,'prefix',NULL,NULL,'static',NULL,NULL,'text','Name Prefix',NULL,NULL,0,0,NULL,0,NULL),(23,2,'firstname',NULL,NULL,'static',NULL,NULL,'text','First Name',NULL,NULL,1,0,NULL,0,NULL),(24,2,'middlename',NULL,NULL,'static',NULL,NULL,'text','Middle Name/Initial',NULL,NULL,0,0,NULL,0,NULL),(25,2,'lastname',NULL,NULL,'static',NULL,NULL,'text','Last Name',NULL,NULL,1,0,NULL,0,NULL),(26,2,'suffix',NULL,NULL,'static',NULL,NULL,'text','Name Suffix',NULL,NULL,0,0,NULL,0,NULL),(27,2,'company',NULL,NULL,'static',NULL,NULL,'text','Company',NULL,NULL,0,0,NULL,0,NULL),(28,2,'street',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\DefaultBackend','static',NULL,NULL,'multiline','Street Address',NULL,NULL,1,0,NULL,0,NULL),(29,2,'city',NULL,NULL,'static',NULL,NULL,'text','City',NULL,NULL,1,0,NULL,0,NULL),(30,2,'country_id',NULL,NULL,'static',NULL,NULL,'select','Country',NULL,'Magento\\Customer\\Model\\ResourceModel\\Address\\Attribute\\Source\\Country',1,0,NULL,0,NULL),(31,2,'region',NULL,'Magento\\Customer\\Model\\ResourceModel\\Address\\Attribute\\Backend\\Region','static',NULL,NULL,'text','State/Province',NULL,NULL,0,0,NULL,0,NULL),(32,2,'region_id',NULL,NULL,'static',NULL,NULL,'hidden','State/Province',NULL,'Magento\\Customer\\Model\\ResourceModel\\Address\\Attribute\\Source\\Region',0,0,NULL,0,NULL),(33,2,'postcode',NULL,NULL,'static',NULL,NULL,'text','Zip/Postal Code',NULL,NULL,0,0,NULL,0,NULL),(34,2,'telephone',NULL,NULL,'static',NULL,NULL,'text','Phone Number',NULL,NULL,1,0,NULL,0,NULL),(35,2,'fax',NULL,NULL,'static',NULL,NULL,'text','Fax',NULL,NULL,0,0,NULL,0,NULL),(36,2,'vat_id',NULL,NULL,'static',NULL,NULL,'text','VAT Number',NULL,NULL,0,0,NULL,0,NULL),(37,2,'vat_is_valid',NULL,NULL,'static',NULL,NULL,'text','VAT number validity',NULL,NULL,0,0,NULL,0,NULL),(38,2,'vat_request_id',NULL,NULL,'static',NULL,NULL,'text','VAT number validation request ID',NULL,NULL,0,0,NULL,0,NULL),(39,2,'vat_request_date',NULL,NULL,'static',NULL,NULL,'text','VAT number validation request date',NULL,NULL,0,0,NULL,0,NULL),(40,2,'vat_request_success',NULL,NULL,'static',NULL,NULL,'text','VAT number validation request success',NULL,NULL,0,0,NULL,0,NULL),(41,1,'updated_at',NULL,NULL,'static',NULL,NULL,'date','Updated At',NULL,NULL,0,0,NULL,0,NULL),(42,1,'failures_num',NULL,NULL,'static',NULL,NULL,'hidden','Failures Number',NULL,NULL,0,0,NULL,0,NULL),(43,1,'first_failure',NULL,NULL,'static',NULL,NULL,'date','First Failure Date',NULL,NULL,0,0,NULL,0,NULL),(44,1,'lock_expires',NULL,NULL,'static',NULL,NULL,'date','Failures Number',NULL,NULL,0,0,NULL,0,NULL),(45,3,'name',NULL,NULL,'varchar',NULL,NULL,'text','Name',NULL,NULL,1,0,NULL,0,NULL),(46,3,'is_active',NULL,NULL,'int',NULL,NULL,'select','Is Active',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',1,0,NULL,0,NULL),(47,3,'description',NULL,NULL,'text',NULL,NULL,'textarea','Description',NULL,NULL,0,0,NULL,0,NULL),(48,3,'image',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Backend\\Image','varchar',NULL,NULL,'image','Image',NULL,NULL,0,0,NULL,0,NULL),(49,3,'meta_title',NULL,NULL,'varchar',NULL,NULL,'text','Page Title',NULL,NULL,0,0,NULL,0,NULL),(50,3,'meta_keywords',NULL,NULL,'text',NULL,NULL,'textarea','Meta Keywords',NULL,NULL,0,0,NULL,0,NULL),(51,3,'meta_description',NULL,NULL,'text',NULL,NULL,'textarea','Meta Description',NULL,NULL,0,0,NULL,0,NULL),(52,3,'display_mode',NULL,NULL,'varchar',NULL,NULL,'select','Display Mode',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Mode',0,0,NULL,0,NULL),(53,3,'landing_page',NULL,NULL,'int',NULL,NULL,'select','CMS Block',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Page',0,0,NULL,0,NULL),(54,3,'is_anchor',NULL,NULL,'int',NULL,NULL,'select','Is Anchor',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',0,0,'1',0,NULL),(55,3,'path',NULL,NULL,'static',NULL,NULL,'text','Path',NULL,NULL,0,0,NULL,0,NULL),(56,3,'position',NULL,NULL,'static',NULL,NULL,'text','Position',NULL,NULL,0,0,NULL,0,NULL),(57,3,'all_children',NULL,NULL,'text',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(58,3,'path_in_store',NULL,NULL,'text',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(59,3,'children',NULL,NULL,'text',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(60,3,'custom_design',NULL,NULL,'varchar',NULL,NULL,'select','Custom Design',NULL,'Magento\\Theme\\Model\\Theme\\Source\\Theme',0,0,NULL,0,NULL),(61,3,'custom_design_from','Magento\\Catalog\\Model\\ResourceModel\\Eav\\Attribute','Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Frontend\\Datetime','date','Active From',NULL,NULL,0,0,NULL,0,NULL),(62,3,'custom_design_to',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Active To',NULL,NULL,0,0,NULL,0,NULL),(63,3,'page_layout',NULL,NULL,'varchar',NULL,NULL,'select','Page Layout',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Layout',0,0,NULL,0,NULL),(64,3,'custom_layout_update',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Customlayoutupdate','text',NULL,NULL,'textarea','Custom Layout Update',NULL,NULL,0,0,NULL,0,NULL),(65,3,'level',NULL,NULL,'static',NULL,NULL,'text','Level',NULL,NULL,0,0,NULL,0,NULL),(66,3,'children_count',NULL,NULL,'static',NULL,NULL,'text','Children Count',NULL,NULL,0,0,NULL,0,NULL),(67,3,'available_sort_by',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Backend\\Sortby','text',NULL,NULL,'multiselect','Available Product Listing Sort By',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Sortby',1,0,NULL,0,NULL),(68,3,'default_sort_by',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Backend\\Sortby','varchar',NULL,NULL,'select','Default Product Listing Sort By',NULL,'Magento\\Catalog\\Model\\Category\\Attribute\\Source\\Sortby',1,0,NULL,0,NULL),(69,3,'include_in_menu',NULL,NULL,'int',NULL,NULL,'select','Include in Navigation Menu',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',1,0,'1',0,NULL),(70,3,'custom_use_parent_settings',NULL,NULL,'int',NULL,NULL,'select','Use Parent Category Settings',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',0,0,NULL,0,NULL),(71,3,'custom_apply_to_products',NULL,NULL,'int',NULL,NULL,'select','Apply To Products',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean',0,0,NULL,0,NULL),(72,3,'filter_price_range',NULL,NULL,'decimal',NULL,NULL,'text','Layered Navigation Price Step',NULL,NULL,0,0,NULL,0,NULL),(73,4,'name',NULL,NULL,'varchar',NULL,NULL,'text','Product Name','validate-length maximum-length-255',NULL,1,0,NULL,0,NULL),(74,4,'sku',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Sku','static',NULL,NULL,'text','SKU','validate-length maximum-length-64',NULL,1,0,NULL,1,NULL),(75,4,'description',NULL,NULL,'text',NULL,NULL,'textarea','Description',NULL,NULL,0,0,NULL,0,NULL),(76,4,'short_description',NULL,NULL,'text',NULL,NULL,'textarea','Short Description',NULL,NULL,0,0,NULL,0,NULL),(77,4,'price',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Price',NULL,NULL,1,0,NULL,0,NULL),(78,4,'special_price',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Special Price',NULL,NULL,0,0,NULL,0,NULL),(79,4,'special_from_date',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,NULL,'date','Special Price From Date',NULL,NULL,0,0,NULL,0,NULL),(80,4,'special_to_date',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Special Price To Date',NULL,NULL,0,0,NULL,0,NULL),(81,4,'cost',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Cost',NULL,NULL,0,1,NULL,0,NULL),(82,4,'weight',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Weight','decimal',NULL,NULL,'weight','Weight',NULL,NULL,0,0,NULL,0,NULL),(83,4,'manufacturer',NULL,NULL,'int',NULL,NULL,'select','Manufacturer',NULL,NULL,0,1,NULL,0,NULL),(84,4,'meta_title',NULL,NULL,'varchar',NULL,NULL,'text','Meta Title',NULL,NULL,0,0,NULL,0,NULL),(85,4,'meta_keyword',NULL,NULL,'text',NULL,NULL,'textarea','Meta Keywords',NULL,NULL,0,0,NULL,0,NULL),(86,4,'meta_description',NULL,NULL,'varchar',NULL,NULL,'textarea','Meta Description',NULL,NULL,0,0,NULL,0,'Maximum 255 chars. Meta Description should optimally be between 150-160 characters'),(87,4,'image',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Base',NULL,NULL,0,0,NULL,0,NULL),(88,4,'small_image',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Small',NULL,NULL,0,0,NULL,0,NULL),(89,4,'thumbnail',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Thumbnail',NULL,NULL,0,0,NULL,0,NULL),(90,4,'media_gallery',NULL,NULL,'static',NULL,NULL,'gallery','Media Gallery',NULL,NULL,0,0,NULL,0,NULL),(91,4,'old_id',NULL,NULL,'int',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(92,4,'tier_price',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Tierprice','decimal',NULL,NULL,'text','Tier Price',NULL,NULL,0,0,NULL,0,NULL),(93,4,'color',NULL,NULL,'int',NULL,NULL,'select','Color',NULL,NULL,0,1,NULL,0,NULL),(94,4,'news_from_date',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,NULL,'date','Set Product as New from Date',NULL,NULL,0,0,NULL,0,NULL),(95,4,'news_to_date',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Set Product as New to Date',NULL,NULL,0,0,NULL,0,NULL),(96,4,'gallery',NULL,NULL,'varchar',NULL,NULL,'gallery','Image Gallery',NULL,NULL,0,0,NULL,0,NULL),(97,4,'status',NULL,NULL,'int',NULL,NULL,'select','Enable Product',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Status',0,0,'1',0,NULL),(98,4,'minimal_price',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Minimal Price',NULL,NULL,0,0,NULL,0,NULL),(99,4,'visibility',NULL,NULL,'int',NULL,NULL,'select','Visibility',NULL,'Magento\\Catalog\\Model\\Product\\Visibility',0,0,'4',0,NULL),(100,4,'custom_design',NULL,NULL,'varchar',NULL,NULL,'select','New Theme',NULL,'Magento\\Theme\\Model\\Theme\\Source\\Theme',0,0,NULL,0,NULL),(101,4,'custom_design_from',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Startdate','datetime',NULL,NULL,'date','Active From',NULL,NULL,0,0,NULL,0,NULL),(102,4,'custom_design_to',NULL,'Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime','datetime',NULL,NULL,'date','Active To',NULL,NULL,0,0,NULL,0,NULL),(103,4,'custom_layout_update',NULL,'Magento\\Catalog\\Model\\Attribute\\Backend\\Customlayoutupdate','text',NULL,NULL,'textarea','Layout Update XML',NULL,NULL,0,0,NULL,0,NULL),(104,4,'page_layout',NULL,NULL,'varchar',NULL,NULL,'select','Layout',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Layout',0,0,NULL,0,NULL),(105,4,'category_ids',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Category','static',NULL,NULL,'text','Categories',NULL,NULL,0,0,NULL,0,NULL),(106,4,'options_container',NULL,NULL,'varchar',NULL,NULL,'select','Display Product Options In',NULL,'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Design\\Options\\Container',0,0,'container2',0,NULL),(107,4,'required_options',NULL,NULL,'static',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(108,4,'has_options',NULL,NULL,'static',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(109,4,'image_label',NULL,NULL,'varchar',NULL,NULL,'text','Image Label',NULL,NULL,0,0,NULL,0,NULL),(110,4,'small_image_label',NULL,NULL,'varchar',NULL,NULL,'text','Small Image Label',NULL,NULL,0,0,NULL,0,NULL),(111,4,'thumbnail_label',NULL,NULL,'varchar',NULL,NULL,'text','Thumbnail Label',NULL,NULL,0,0,NULL,0,NULL),(112,4,'created_at',NULL,NULL,'static',NULL,NULL,'date',NULL,NULL,NULL,1,0,NULL,0,NULL),(113,4,'updated_at',NULL,NULL,'static',NULL,NULL,'date',NULL,NULL,NULL,1,0,NULL,0,NULL),(114,4,'country_of_manufacture',NULL,NULL,'varchar',NULL,NULL,'select','Country of Manufacture',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Countryofmanufacture',0,0,NULL,0,NULL),(115,4,'quantity_and_stock_status',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Stock','int',NULL,NULL,'select','Quantity',NULL,'Magento\\CatalogInventory\\Model\\Source\\Stock',0,0,'1',0,NULL),(116,4,'custom_layout',NULL,NULL,'varchar',NULL,NULL,'select','New Layout',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Layout',0,0,NULL,0,NULL),(117,3,'url_key',NULL,NULL,'varchar',NULL,NULL,'text','URL Key',NULL,NULL,0,0,NULL,0,NULL),(118,3,'url_path',NULL,NULL,'varchar',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(119,4,'url_key',NULL,NULL,'varchar',NULL,NULL,'text','URL Key',NULL,NULL,0,0,NULL,0,NULL),(120,4,'url_path',NULL,NULL,'varchar',NULL,NULL,'text',NULL,NULL,NULL,0,0,NULL,0,NULL),(121,4,'msrp',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price','decimal',NULL,NULL,'price','Manufacturer\'s Suggested Retail Price',NULL,NULL,0,0,NULL,0,NULL),(122,4,'msrp_display_actual_price_type',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Boolean','varchar',NULL,NULL,'select','Display Actual Price',NULL,'Magento\\Msrp\\Model\\Product\\Attribute\\Source\\Type\\Price',0,0,'0',0,NULL),(123,4,'links_purchased_separately',NULL,NULL,'int',NULL,NULL,NULL,'Links can be purchased separately',NULL,NULL,1,0,NULL,0,NULL),(124,4,'samples_title',NULL,NULL,'varchar',NULL,NULL,NULL,'Samples title',NULL,NULL,1,0,NULL,0,NULL),(125,4,'links_title',NULL,NULL,'varchar',NULL,NULL,NULL,'Links title',NULL,NULL,1,0,NULL,0,NULL),(126,4,'links_exist',NULL,NULL,'int',NULL,NULL,NULL,NULL,NULL,NULL,0,0,'0',0,NULL),(127,4,'price_type',NULL,NULL,'int',NULL,NULL,'boolean','Dynamic Price',NULL,NULL,1,0,'0',0,NULL),(128,4,'sku_type',NULL,NULL,'int',NULL,NULL,'boolean','Dynamic SKU',NULL,NULL,1,0,'0',0,NULL),(129,4,'weight_type',NULL,NULL,'int',NULL,NULL,'boolean','Dynamic Weight',NULL,NULL,1,0,'0',0,NULL),(130,4,'price_view',NULL,NULL,'int',NULL,NULL,'select','Price View',NULL,'Magento\\Bundle\\Model\\Product\\Attribute\\Source\\Price\\View',1,0,NULL,0,NULL),(131,4,'shipment_type',NULL,NULL,'int',NULL,NULL,'select','Ship Bundle Items',NULL,'Magento\\Bundle\\Model\\Product\\Attribute\\Source\\Shipment\\Type',1,0,'0',0,NULL),(132,4,'gift_message_available',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Boolean','varchar',NULL,NULL,'select','Allow Gift Message',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Boolean',0,0,NULL,0,NULL),(133,4,'swatch_image',NULL,NULL,'varchar',NULL,'Magento\\Catalog\\Model\\Product\\Attribute\\Frontend\\Image','media_image','Swatch',NULL,NULL,0,0,NULL,0,NULL),(134,4,'tax_class_id',NULL,NULL,'int',NULL,NULL,'select','Tax Class',NULL,'Magento\\Tax\\Model\\TaxClass\\Source\\Product',0,0,'2',0,NULL);
 /*!40000 ALTER TABLE `eav_attribute` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3387,7 +3719,17 @@ CREATE TABLE `email_catalog` (
   KEY `EMAIL_CATALOG_MODIFIED` (`modified`),
   KEY `EMAIL_CATALOG_CREATED_AT` (`created_at`),
   KEY `EMAIL_CATALOG_UPDATED_AT` (`updated_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Connector Catalog';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Connector Catalog';
+
+--
+-- Dumping data for table `email_catalog`
+--
+
+LOCK TABLES `email_catalog` WRITE;
+/*!40000 ALTER TABLE `email_catalog` DISABLE KEYS */;
+INSERT INTO `email_catalog` VALUES ('1','1',NULL,NULL,'2018-02-28 11:17:16','2018-02-28 11:17:16'),('2','2',NULL,NULL,'2018-03-01 02:29:02','2018-03-01 02:29:02');
+/*!40000 ALTER TABLE `email_catalog` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `email_contact`
@@ -3581,7 +3923,7 @@ CREATE TABLE `flag` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of Last Flag Update',
   PRIMARY KEY (`flag_id`),
   KEY `FLAG_LAST_UPDATE` (`last_update`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Flag';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Flag';
 
 --
 -- Dumping data for table `flag`
@@ -3589,7 +3931,7 @@ CREATE TABLE `flag` (
 
 LOCK TABLES `flag` WRITE;
 /*!40000 ALTER TABLE `flag` DISABLE KEYS */;
-INSERT INTO `flag` VALUES ('1','analytics_link_attempts_reverse_counter',0,'24','2018-02-27 10:03:14');
+INSERT INTO `flag` VALUES ('1','analytics_link_attempts_reverse_counter',0,'24','2018-02-27 10:03:14'),('2','catalog_website_attribute_is_sync_required',0,'2','2018-02-27 11:23:11'),('3','report_order_aggregated',0,NULL,'2018-03-01 06:15:34');
 /*!40000 ALTER TABLE `flag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3672,7 +4014,7 @@ CREATE TABLE `indexer_state` (
 
 LOCK TABLES `indexer_state` WRITE;
 /*!40000 ALTER TABLE `indexer_state` DISABLE KEYS */;
-INSERT INTO `indexer_state` VALUES ('1','design_config_grid','valid','2018-02-27 10:28:48','34ec592bfa6c952bed4d0a1d58c98770'),('2','customer_grid','valid','2018-02-27 10:28:48','b9632e06cf957d6e8103eb236ca38cc1'),('3','catalog_category_product','valid','2018-02-27 10:28:49','2124d5bfcd83b609c67eee94a0e4708c'),('4','catalog_product_category','valid','2018-02-27 10:28:49','77b6356629f3259568a68ea64c773238'),('5','catalog_product_price','valid','2018-02-27 10:28:49','2c3434338353a47cb4c5783800c0bdbe'),('6','catalog_product_attribute','valid','2018-02-27 10:28:49','f73cae77ec4dee3b587a60a2f38dd26a'),('7','cataloginventory_stock','valid','2018-02-27 10:28:49','1bf66e64558a5171e523b32f25cb99ca'),('8','catalogrule_rule','valid','2018-02-27 10:28:50','c4f8344a2e6a7d8ebc065631454a4724'),('9','catalogrule_product','valid','2018-02-27 10:28:50','667205576ee3764b1ee81c4a076d10ae'),('10','catalogsearch_fulltext','valid','2018-02-27 10:28:50','cc2d2701487ee835df4e72b15254852b');
+INSERT INTO `indexer_state` VALUES ('1','design_config_grid','valid','2018-03-01 06:10:08','34ec592bfa6c952bed4d0a1d58c98770'),('2','customer_grid','valid','2018-03-01 06:10:08','b9632e06cf957d6e8103eb236ca38cc1'),('3','catalog_category_product','valid','2018-03-01 06:10:09','2124d5bfcd83b609c67eee94a0e4708c'),('4','catalog_product_category','valid','2018-02-27 10:28:49','77b6356629f3259568a68ea64c773238'),('5','catalog_product_price','valid','2018-03-01 06:10:09','2c3434338353a47cb4c5783800c0bdbe'),('6','catalog_product_attribute','valid','2018-03-01 06:10:10','f73cae77ec4dee3b587a60a2f38dd26a'),('7','cataloginventory_stock','valid','2018-03-01 06:10:10','1bf66e64558a5171e523b32f25cb99ca'),('8','catalogrule_rule','valid','2018-03-01 06:10:10','c4f8344a2e6a7d8ebc065631454a4724'),('9','catalogrule_product','valid','2018-03-01 05:39:44','667205576ee3764b1ee81c4a076d10ae'),('10','catalogsearch_fulltext','valid','2018-03-01 06:10:12','cc2d2701487ee835df4e72b15254852b');
 /*!40000 ALTER TABLE `indexer_state` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4196,7 +4538,17 @@ CREATE TABLE `quote` (
   PRIMARY KEY (`entity_id`),
   KEY `QUOTE_CUSTOMER_ID_STORE_ID_IS_ACTIVE` (`customer_id`,`store_id`,`is_active`),
   KEY `QUOTE_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote';
+
+--
+-- Dumping data for table `quote`
+--
+
+LOCK TABLES `quote` WRITE;
+/*!40000 ALTER TABLE `quote` DISABLE KEYS */;
+INSERT INTO `quote` VALUES ('1',4,'2018-03-01 05:42:10','2018-03-01 05:49:28',NULL,0,1,0,'1','1.0000','0','0.0000','0.0000','USD','USD','USD','5.0000','5.0000','guest',NULL,'3','0','test1@email.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,'127.0.0.1',NULL,'4000000001',NULL,NULL,'PHP','0.0000','1.0000',NULL,NULL,'5.0000','5.0000','5.0000','5.0000','1',0,NULL,0,NULL),('2',1,'2018-03-01 05:50:42','2018-03-01 05:52:00',NULL,0,1,0,'1','1.0000','0','0.0000','0.0000','PHP','PHP','PHP','5.0000','5.0000','guest',NULL,'3','0','test2@email.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,'127.0.0.1',NULL,'000000001',NULL,NULL,'PHP','1.0000','1.0000',NULL,NULL,'5.0000','5.0000','5.0000','5.0000','1',0,NULL,0,NULL);
+/*!40000 ALTER TABLE `quote` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `quote_address`
@@ -4268,7 +4620,17 @@ CREATE TABLE `quote_address` (
   `gift_message_id` int(11) DEFAULT NULL COMMENT 'Gift Message Id',
   PRIMARY KEY (`address_id`),
   KEY `QUOTE_ADDRESS_QUOTE_ID` (`quote_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Address';
+
+--
+-- Dumping data for table `quote_address`
+--
+
+LOCK TABLES `quote_address` WRITE;
+/*!40000 ALTER TABLE `quote_address` DISABLE KEYS */;
+INSERT INTO `quote_address` VALUES ('2','1','2018-03-01 05:42:10','0000-00-00 00:00:00',NULL,0,NULL,'shipping',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,NULL,NULL,'0.0000','0.0000','0.0000','2.3000','120.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000',NULL,'null',NULL,'0.0000','0.0000','0.0000','120.0000','0.0000','0.0000','0.0000',NULL,'0.0000','0.0000',0,NULL,NULL,NULL,NULL,NULL,NULL),('4','1','2018-03-01 05:49:25','0000-00-00 00:00:00',NULL,1,NULL,'billing','test1@email.com',NULL,'Juan',NULL,'dela Cruz',NULL,NULL,'Binondo','Manila','Metro Manila',NULL,'1101','PH','+63123456789',NULL,0,0,NULL,NULL,'0.0000','5.0000','5.0000','5.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','5.0000','5.0000',NULL,'[]',NULL,'0.0000','0.0000','5.0000','5.0000','0.0000','0.0000','0.0000',NULL,'0.0000','0.0000',0,NULL,NULL,NULL,NULL,NULL,NULL),('6','2','2018-03-01 05:50:42','0000-00-00 00:00:00',NULL,0,NULL,'shipping',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,NULL,NULL,'0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000',NULL,NULL,'0.0000','0.0000','0.0000','0.0000',NULL,'null',NULL,NULL,NULL,'0.0000',NULL,'0.0000','0.0000','0.0000',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL),('8','2','2018-03-01 05:51:58','0000-00-00 00:00:00',NULL,1,NULL,'billing','test2@email.com',NULL,'Maria',NULL,'de Jesus',NULL,NULL,'Cubao','Quezon City',NULL,NULL,'1109','PH','+63123454321',NULL,0,0,NULL,NULL,'0.0000','5.0000','5.0000','5.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','5.0000','5.0000',NULL,'[]',NULL,'0.0000','0.0000','5.0000','5.0000','0.0000','0.0000','0.0000',NULL,'0.0000','0.0000',0,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `quote_address` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `quote_address_item`
@@ -4334,7 +4696,17 @@ CREATE TABLE `quote_id_mask` (
   PRIMARY KEY (`entity_id`,`quote_id`),
   KEY `QUOTE_ID_MASK_QUOTE_ID` (`quote_id`),
   KEY `QUOTE_ID_MASK_MASKED_ID` (`masked_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Quote ID and masked ID mapping';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Quote ID and masked ID mapping';
+
+--
+-- Dumping data for table `quote_id_mask`
+--
+
+LOCK TABLES `quote_id_mask` WRITE;
+/*!40000 ALTER TABLE `quote_id_mask` DISABLE KEYS */;
+INSERT INTO `quote_id_mask` VALUES ('1','1','4da289584a35f75483213771e29e7ea5'),('2','2','5a2822034798d6bea95e1cc4507cb839');
+/*!40000 ALTER TABLE `quote_id_mask` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `quote_item`
@@ -4400,7 +4772,17 @@ CREATE TABLE `quote_item` (
   KEY `QUOTE_ITEM_PRODUCT_ID` (`product_id`),
   KEY `QUOTE_ITEM_QUOTE_ID` (`quote_id`),
   KEY `QUOTE_ITEM_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item';
+
+--
+-- Dumping data for table `quote_item`
+--
+
+LOCK TABLES `quote_item` WRITE;
+/*!40000 ALTER TABLE `quote_item` DISABLE KEYS */;
+INSERT INTO `quote_item` VALUES ('2','1','2018-03-01 05:42:36','2018-03-01 05:49:08','1',4,NULL,1,'thtbrsh','Toothbrush',NULL,NULL,NULL,0,0,NULL,'1.0000','5.0000','5.0000',NULL,'0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','5.0000','5.0000','0.0000','0.0000','virtual',NULL,NULL,NULL,NULL,NULL,'5.0000','5.0000','5.0000','5.0000','0.0000','0.0000',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('3','2','2018-03-01 05:50:42','0000-00-00 00:00:00','1',1,NULL,1,'thtbrsh','Toothbrush',NULL,NULL,NULL,0,0,NULL,'1.0000','5.0000','5.0000',NULL,'0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','5.0000','5.0000','0.0000','0.0000','virtual',NULL,NULL,NULL,NULL,NULL,'5.0000','5.0000','5.0000','5.0000','0.0000','0.0000',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `quote_item` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `quote_item_option`
@@ -4415,7 +4797,17 @@ CREATE TABLE `quote_item_option` (
   `value` text COMMENT 'Value',
   PRIMARY KEY (`option_id`),
   KEY `QUOTE_ITEM_OPTION_ITEM_ID` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Item Option';
+
+--
+-- Dumping data for table `quote_item_option`
+--
+
+LOCK TABLES `quote_item_option` WRITE;
+/*!40000 ALTER TABLE `quote_item_option` DISABLE KEYS */;
+INSERT INTO `quote_item_option` VALUES ('2','2','1','info_buyRequest','{\"uenc\":\"aHR0cDovL3VzLmdsb2JhbC5zdG9yZTo4MDc3L2F0LWhvbWUuaHRtbA,,\",\"product\":\"1\",\"qty\":1}'),('3','3','1','info_buyRequest','{\"uenc\":\"aHR0cDovL3BoLmdsb2JhbC5zdG9yZTo4MDc3L3Rvb3RoYnJ1c2guaHRtbA,,\",\"product\":\"1\",\"selected_configurable_option\":\"\",\"related_product\":\"\",\"qty\":\"1\"}');
+/*!40000 ALTER TABLE `quote_item_option` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `quote_payment`
@@ -4447,7 +4839,17 @@ CREATE TABLE `quote_payment` (
   `paypal_correlation_id` varchar(255) DEFAULT NULL COMMENT 'Paypal Correlation Id',
   PRIMARY KEY (`payment_id`),
   KEY `QUOTE_PAYMENT_QUOTE_ID` (`quote_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Payment';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Quote Payment';
+
+--
+-- Dumping data for table `quote_payment`
+--
+
+LOCK TABLES `quote_payment` WRITE;
+/*!40000 ALTER TABLE `quote_payment` DISABLE KEYS */;
+INSERT INTO `quote_payment` VALUES ('1','1','2018-03-01 05:49:25','0000-00-00 00:00:00','checkmo',NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,0,0,NULL,NULL,NULL,'null',NULL,NULL,NULL),('2','2','2018-03-01 05:51:59','0000-00-00 00:00:00','checkmo',NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,0,0,NULL,NULL,NULL,'null',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `quote_payment` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `quote_shipping_rate`
@@ -4671,7 +5073,17 @@ CREATE TABLE `report_event` (
   KEY `REPORT_EVENT_OBJECT_ID` (`object_id`),
   KEY `REPORT_EVENT_SUBTYPE` (`subtype`),
   KEY `REPORT_EVENT_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Reports Event Table';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='Reports Event Table';
+
+--
+-- Dumping data for table `report_event`
+--
+
+LOCK TABLES `report_event` WRITE;
+/*!40000 ALTER TABLE `report_event` DISABLE KEYS */;
+INSERT INTO `report_event` VALUES (1,'2018-02-28 11:20:10',1,'1','35',1,1),(2,'2018-03-01 02:29:30',1,'2','36',1,4),(3,'2018-03-01 02:31:43',1,'1','36',1,1),(4,'2018-03-01 03:49:22',1,'1','36',1,1),(5,'2018-03-01 03:50:12',1,'1','36',1,2),(6,'2018-03-01 03:50:21',1,'1','36',1,2),(7,'2018-03-01 03:50:31',1,'2','36',1,2),(8,'2018-03-01 04:19:21',1,'2','36',1,4),(9,'2018-03-01 05:42:10',4,'2','40',1,4),(10,'2018-03-01 05:42:36',4,'1','40',1,4),(11,'2018-03-01 05:50:36',1,'1','45',1,1),(12,'2018-03-01 05:50:42',4,'1','47',1,1);
+/*!40000 ALTER TABLE `report_event` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `report_event_types`
@@ -4773,7 +5185,17 @@ CREATE TABLE `report_viewed_product_index` (
   KEY `REPORT_VIEWED_PRODUCT_INDEX_STORE_ID` (`store_id`),
   KEY `REPORT_VIEWED_PRODUCT_INDEX_ADDED_AT` (`added_at`),
   KEY `REPORT_VIEWED_PRODUCT_INDEX_PRODUCT_ID` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='Reports Viewed Product Index Table';
+
+--
+-- Dumping data for table `report_viewed_product_index`
+--
+
+LOCK TABLES `report_viewed_product_index` WRITE;
+/*!40000 ALTER TABLE `report_viewed_product_index` DISABLE KEYS */;
+INSERT INTO `report_viewed_product_index` VALUES (1,'35',NULL,'1',1,'2018-02-28 11:20:10'),(2,'36',NULL,'2',4,'2018-03-01 02:29:30'),(3,'36',NULL,'1',2,'2018-03-01 02:31:43'),(9,'45',NULL,'1',1,'2018-03-01 05:50:36');
+/*!40000 ALTER TABLE `report_viewed_product_index` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `reporting_counts`
@@ -5249,7 +5671,17 @@ CREATE TABLE `sales_invoice` (
   KEY `SALES_INVOICE_UPDATED_AT` (`updated_at`),
   KEY `SALES_INVOICE_SEND_EMAIL` (`send_email`),
   KEY `SALES_INVOICE_EMAIL_SENT` (`email_sent`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Invoice';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Invoice';
+
+--
+-- Dumping data for table `sales_invoice`
+--
+
+LOCK TABLES `sales_invoice` WRITE;
+/*!40000 ALTER TABLE `sales_invoice` DISABLE KEYS */;
+INSERT INTO `sales_invoice` VALUES ('1',1,'5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','1.0000','5.0000','0.0000','5.0000','5.0000','0.0000','0.0000','1.0000','1.0000','5.0000','5.0000','0.0000','2',NULL,'2',NULL,NULL,0,'2',NULL,'PHP',NULL,'PHP','PHP','PHP','000000001','2018-03-01 06:12:23','2018-03-01 06:12:23','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `sales_invoice` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_invoice_comment`
@@ -5316,6 +5748,16 @@ CREATE TABLE `sales_invoice_grid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Invoice Grid';
 
 --
+-- Dumping data for table `sales_invoice_grid`
+--
+
+LOCK TABLES `sales_invoice_grid` WRITE;
+/*!40000 ALTER TABLE `sales_invoice_grid` DISABLE KEYS */;
+INSERT INTO `sales_invoice_grid` VALUES ('1','000000001','2',1,'Global Store PH\r\nGS PH Store\r\nGS','2','000000001','2018-03-01 05:51:59','','test2@email.com','0','checkmo','PHP','PHP','PHP','PHP','Maria de Jesus','Cubao Quezon City 1109','',NULL,'5.0000','0.0000','5.0000','5.0000','2018-03-01 06:12:23','2018-03-01 06:12:23');
+/*!40000 ALTER TABLE `sales_invoice_grid` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sales_invoice_item`
 --
 
@@ -5357,7 +5799,17 @@ CREATE TABLE `sales_invoice_item` (
   `base_weee_tax_row_disposition` decimal(12,4) DEFAULT NULL COMMENT 'Base Weee Tax Row Disposition',
   PRIMARY KEY (`entity_id`),
   KEY `SALES_INVOICE_ITEM_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Invoice Item';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Invoice Item';
+
+--
+-- Dumping data for table `sales_invoice_item`
+--
+
+LOCK TABLES `sales_invoice_item` WRITE;
+/*!40000 ALTER TABLE `sales_invoice_item` DISABLE KEYS */;
+INSERT INTO `sales_invoice_item` VALUES ('1','1','5.0000','0.0000','5.0000',NULL,'5.0000',NULL,'5.0000','0.0000','5.0000','1.0000',NULL,'5.0000','5.0000','5.0000','1','2',NULL,NULL,'thtbrsh','Toothbrush','0.0000','0.0000',NULL,'[]',NULL,'0.0000',NULL,'0.0000',NULL,NULL,NULL,'0.0000');
+/*!40000 ALTER TABLE `sales_invoice_item` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_invoiced_aggregated`
@@ -5555,7 +6007,17 @@ CREATE TABLE `sales_order` (
   KEY `SALES_ORDER_UPDATED_AT` (`updated_at`),
   KEY `SALES_ORDER_SEND_EMAIL` (`send_email`),
   KEY `SALES_ORDER_EMAIL_SENT` (`email_sent`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order';
+
+--
+-- Dumping data for table `sales_order`
+--
+
+LOCK TABLES `sales_order` WRITE;
+/*!40000 ALTER TABLE `sales_order` DISABLE KEYS */;
+INSERT INTO `sales_order` VALUES ('1','new','pending',NULL,'bdf70e2f3dfef5b91d91a8841273b8f8',NULL,1,4,NULL,'0.0000',NULL,NULL,NULL,'5.0000','0.0000',NULL,NULL,NULL,'0.0000',NULL,'5.0000',NULL,NULL,NULL,'0.0000',NULL,NULL,NULL,'0.0000','1.0000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0.0000',NULL,NULL,NULL,'5.0000','0.0000',NULL,NULL,NULL,'0.0000',NULL,'0.0000','0.0000','5.0000',NULL,NULL,NULL,'0.0000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1.0000',NULL,NULL,NULL,1,1,'1','0',NULL,1,1,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,'0.0000','5.0000','5.0000',NULL,'0.0000','5.0000','5.0000','0.0000',NULL,'4000000001',NULL,'USD','test1@email.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'PHP',NULL,NULL,'USD',NULL,NULL,NULL,NULL,NULL,'127.0.0.1',NULL,'USD','Global Store US\r\nGS US Store\r\nGS',NULL,NULL,'2018-03-01 05:49:25','2018-03-01 05:49:28',1,NULL,'0.0000','0.0000','0.0000','0.0000',NULL,NULL,NULL,NULL,'0.0000','0.0000',NULL,NULL,'0'),('2','complete','complete',NULL,'65e8ca1f327a228820fcca764dd2c017',NULL,1,1,NULL,'0.0000',NULL,'0.0000',NULL,'5.0000','0.0000',NULL,'0.0000',NULL,'0.0000',NULL,'5.0000',NULL,'5.0000',NULL,'0.0000',NULL,'0.0000',NULL,'1.0000','1.0000',NULL,'5.0000','0.0000',NULL,NULL,'5.0000',NULL,NULL,'0.0000',NULL,'0.0000',NULL,'5.0000','0.0000',NULL,'0.0000',NULL,'0.0000',NULL,'0.0000','0.0000','5.0000',NULL,'5.0000',NULL,'0.0000',NULL,'0.0000',NULL,NULL,'5.0000',NULL,NULL,'5.0000','1.0000',NULL,NULL,NULL,1,0,'2','0',NULL,1,1,NULL,NULL,NULL,'2',NULL,NULL,NULL,NULL,NULL,'0.0000','5.0000','0.0000',NULL,'0.0000','5.0000','0.0000','0.0000',NULL,'000000001',NULL,'PHP','test2@email.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'PHP',NULL,NULL,'PHP',NULL,NULL,NULL,NULL,NULL,'127.0.0.1',NULL,'PHP','Global Store PH\r\nGS PH Store\r\nGS',NULL,NULL,'2018-03-01 05:51:59','2018-03-01 06:12:23',1,NULL,'0.0000','0.0000','0.0000','0.0000','0.0000','0.0000',NULL,NULL,'0.0000','0.0000',NULL,NULL,'0');
+/*!40000 ALTER TABLE `sales_order` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_order_address`
@@ -5591,7 +6053,17 @@ CREATE TABLE `sales_order_address` (
   `vat_request_success` smallint(6) DEFAULT NULL COMMENT 'Vat Request Success',
   PRIMARY KEY (`entity_id`),
   KEY `SALES_ORDER_ADDRESS_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Address';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Address';
+
+--
+-- Dumping data for table `sales_order_address`
+--
+
+LOCK TABLES `sales_order_address` WRITE;
+/*!40000 ALTER TABLE `sales_order_address` DISABLE KEYS */;
+INSERT INTO `sales_order_address` VALUES ('1','1',NULL,NULL,NULL,NULL,NULL,'Metro Manila','1101','dela Cruz','Binondo','Manila','test1@email.com','+63123456789','PH','Juan','billing',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('2','2',NULL,NULL,NULL,NULL,NULL,NULL,'1109','de Jesus','Cubao','Quezon City','test2@email.com','+63123454321','PH','Maria','billing',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `sales_order_address` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_order_aggregated_created`
@@ -5622,7 +6094,17 @@ CREATE TABLE `sales_order_aggregated_created` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `SALES_ORDER_AGGREGATED_CREATED_PERIOD_STORE_ID_ORDER_STATUS` (`period`,`store_id`,`order_status`),
   KEY `SALES_ORDER_AGGREGATED_CREATED_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Order Aggregated Created';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Order Aggregated Created';
+
+--
+-- Dumping data for table `sales_order_aggregated_created`
+--
+
+LOCK TABLES `sales_order_aggregated_created` WRITE;
+/*!40000 ALTER TABLE `sales_order_aggregated_created` DISABLE KEYS */;
+INSERT INTO `sales_order_aggregated_created` VALUES ('1','2018-02-28',1,'complete','1','1.0000','1.0000','5.0000','5.0000','5.0000','5.0000','0.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000'),('2','2018-02-28',0,'complete','1','1.0000','1.0000','5.0000','5.0000','5.0000','5.0000','0.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000');
+/*!40000 ALTER TABLE `sales_order_aggregated_created` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_order_aggregated_updated`
@@ -5653,7 +6135,17 @@ CREATE TABLE `sales_order_aggregated_updated` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `SALES_ORDER_AGGREGATED_UPDATED_PERIOD_STORE_ID_ORDER_STATUS` (`period`,`store_id`,`order_status`),
   KEY `SALES_ORDER_AGGREGATED_UPDATED_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Order Aggregated Updated';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Order Aggregated Updated';
+
+--
+-- Dumping data for table `sales_order_aggregated_updated`
+--
+
+LOCK TABLES `sales_order_aggregated_updated` WRITE;
+/*!40000 ALTER TABLE `sales_order_aggregated_updated` DISABLE KEYS */;
+INSERT INTO `sales_order_aggregated_updated` VALUES ('1','2018-02-28',1,'complete','1','1.0000','1.0000','5.0000','5.0000','5.0000','5.0000','0.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000'),('2','2018-02-28',0,'complete','1','1.0000','1.0000','5.0000','5.0000','5.0000','5.0000','0.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000');
+/*!40000 ALTER TABLE `sales_order_aggregated_updated` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_order_grid`
@@ -5703,6 +6195,16 @@ CREATE TABLE `sales_order_grid` (
   KEY `SALES_ORDER_GRID_UPDATED_AT` (`updated_at`),
   FULLTEXT KEY `FTI_65B9E9925EC58F0C7C2E2F6379C233E7` (`increment_id`,`billing_name`,`shipping_name`,`shipping_address`,`billing_address`,`customer_name`,`customer_email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Grid';
+
+--
+-- Dumping data for table `sales_order_grid`
+--
+
+LOCK TABLES `sales_order_grid` WRITE;
+/*!40000 ALTER TABLE `sales_order_grid` DISABLE KEYS */;
+INSERT INTO `sales_order_grid` VALUES ('1','pending',4,'Global Store US\r\nGS US Store\r\nGS',NULL,'5.0000',NULL,'5.0000',NULL,'4000000001','USD','USD','','Juan dela Cruz','2018-03-01 05:49:25','2018-03-01 05:49:26','Binondo Manila Metro Manila 1101','',NULL,'test1@email.com','0','5.0000','0.0000','','checkmo',NULL,NULL),('2','complete',1,'Global Store PH\r\nGS PH Store\r\nGS',NULL,'5.0000','5.0000','5.0000','5.0000','000000001','PHP','PHP','','Maria de Jesus','2018-03-01 05:51:59','2018-03-01 06:12:23','Cubao Quezon City 1109','',NULL,'test2@email.com','0','5.0000','0.0000','','checkmo',NULL,NULL);
+/*!40000 ALTER TABLE `sales_order_grid` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_order_item`
@@ -5793,7 +6295,17 @@ CREATE TABLE `sales_order_item` (
   PRIMARY KEY (`item_id`),
   KEY `SALES_ORDER_ITEM_ORDER_ID` (`order_id`),
   KEY `SALES_ORDER_ITEM_STORE_ID` (`store_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Item';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Item';
+
+--
+-- Dumping data for table `sales_order_item`
+--
+
+LOCK TABLES `sales_order_item` WRITE;
+/*!40000 ALTER TABLE `sales_order_item` DISABLE KEYS */;
+INSERT INTO `sales_order_item` VALUES ('1','1',NULL,'2',4,'2018-03-01 05:49:26','2018-03-01 05:49:26','1','virtual','{\"info_buyRequest\":{\"uenc\":\"aHR0cDovL3VzLmdsb2JhbC5zdG9yZTo4MDc3L2F0LWhvbWUuaHRtbA,,\",\"product\":\"1\",\"qty\":1}}',NULL,1,'thtbrsh','Toothbrush',NULL,NULL,NULL,0,0,NULL,'0.0000','0.0000','1.0000','0.0000','0.0000',NULL,'5.0000','5.0000','5.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','5.0000','5.0000','0.0000','0.0000','0.0000',NULL,NULL,NULL,NULL,NULL,'5.0000','5.0000','5.0000','5.0000','0.0000','0.0000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('2','2',NULL,'3',1,'2018-03-01 05:51:59','2018-03-01 06:12:23','1','virtual','{\"info_buyRequest\":{\"uenc\":\"aHR0cDovL3BoLmdsb2JhbC5zdG9yZTo4MDc3L3Rvb3RoYnJ1c2guaHRtbA,,\",\"product\":\"1\",\"selected_configurable_option\":\"\",\"related_product\":\"\",\"qty\":\"1\"}}',NULL,1,'thtbrsh','Toothbrush',NULL,NULL,NULL,0,0,NULL,'0.0000','1.0000','1.0000','0.0000','0.0000',NULL,'5.0000','5.0000','5.0000','5.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','0.0000','5.0000','5.0000','5.0000','5.0000','0.0000',NULL,NULL,NULL,NULL,NULL,'5.0000','5.0000','5.0000','5.0000','0.0000','0.0000','0.0000','0.0000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,'[]',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `sales_order_item` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_order_payment`
@@ -5857,7 +6369,17 @@ CREATE TABLE `sales_order_payment` (
   `additional_information` text COMMENT 'Additional Information',
   PRIMARY KEY (`entity_id`),
   KEY `SALES_ORDER_PAYMENT_PARENT_ID` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Payment';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Payment';
+
+--
+-- Dumping data for table `sales_order_payment`
+--
+
+LOCK TABLES `sales_order_payment` WRITE;
+/*!40000 ALTER TABLE `sales_order_payment` DISABLE KEYS */;
+INSERT INTO `sales_order_payment` VALUES ('1','1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0.0000','0.0000',NULL,NULL,'5.0000',NULL,NULL,NULL,'5.0000',NULL,NULL,NULL,NULL,NULL,NULL,'checkmo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"method_title\":\"Check \\/ Money order\"}'),('2','2','0.0000','0.0000',NULL,'5.0000',NULL,NULL,NULL,NULL,'0.0000','0.0000','5.0000',NULL,'5.0000',NULL,NULL,NULL,'5.0000',NULL,NULL,NULL,NULL,NULL,NULL,'checkmo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'{\"method_title\":\"Check \\/ Money order\"}');
+/*!40000 ALTER TABLE `sales_order_payment` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `sales_order_status`
@@ -6050,7 +6572,7 @@ CREATE TABLE `sales_sequence_meta` (
   `sequence_table` varchar(32) NOT NULL COMMENT 'table for sequence',
   PRIMARY KEY (`meta_id`),
   UNIQUE KEY `SALES_SEQUENCE_META_ENTITY_TYPE_STORE_ID` (`entity_type`,`store_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_meta';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_meta';
 
 --
 -- Dumping data for table `sales_sequence_meta`
@@ -6058,7 +6580,7 @@ CREATE TABLE `sales_sequence_meta` (
 
 LOCK TABLES `sales_sequence_meta` WRITE;
 /*!40000 ALTER TABLE `sales_sequence_meta` DISABLE KEYS */;
-INSERT INTO `sales_sequence_meta` VALUES ('1','order',0,'sequence_order_0'),('2','invoice',0,'sequence_invoice_0'),('3','creditmemo',0,'sequence_creditmemo_0'),('4','shipment',0,'sequence_shipment_0'),('5','order',1,'sequence_order_1'),('6','invoice',1,'sequence_invoice_1'),('7','creditmemo',1,'sequence_creditmemo_1'),('8','shipment',1,'sequence_shipment_1');
+INSERT INTO `sales_sequence_meta` VALUES ('1','order',0,'sequence_order_0'),('2','invoice',0,'sequence_invoice_0'),('3','creditmemo',0,'sequence_creditmemo_0'),('4','shipment',0,'sequence_shipment_0'),('5','order',1,'sequence_order_1'),('6','invoice',1,'sequence_invoice_1'),('7','creditmemo',1,'sequence_creditmemo_1'),('8','shipment',1,'sequence_shipment_1'),('9','order',2,'sequence_order_2'),('10','invoice',2,'sequence_invoice_2'),('11','creditmemo',2,'sequence_creditmemo_2'),('12','shipment',2,'sequence_shipment_2'),('13','order',3,'sequence_order_3'),('14','invoice',3,'sequence_invoice_3'),('15','creditmemo',3,'sequence_creditmemo_3'),('16','shipment',3,'sequence_shipment_3'),('17','order',4,'sequence_order_4'),('18','invoice',4,'sequence_invoice_4'),('19','creditmemo',4,'sequence_creditmemo_4'),('20','shipment',4,'sequence_shipment_4'),('21','order',5,'sequence_order_5'),('22','invoice',5,'sequence_invoice_5'),('23','creditmemo',5,'sequence_creditmemo_5'),('24','shipment',5,'sequence_shipment_5');
 /*!40000 ALTER TABLE `sales_sequence_meta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6079,7 +6601,7 @@ CREATE TABLE `sales_sequence_profile` (
   `is_active` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'isActive flag',
   PRIMARY KEY (`profile_id`),
   UNIQUE KEY `SALES_SEQUENCE_PROFILE_META_ID_PREFIX_SUFFIX` (`meta_id`,`prefix`,`suffix`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_profile';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_profile';
 
 --
 -- Dumping data for table `sales_sequence_profile`
@@ -6087,7 +6609,7 @@ CREATE TABLE `sales_sequence_profile` (
 
 LOCK TABLES `sales_sequence_profile` WRITE;
 /*!40000 ALTER TABLE `sales_sequence_profile` DISABLE KEYS */;
-INSERT INTO `sales_sequence_profile` VALUES ('1','1',NULL,NULL,'1','1','0','0',1),('2','2',NULL,NULL,'1','1','0','0',1),('3','3',NULL,NULL,'1','1','0','0',1),('4','4',NULL,NULL,'1','1','0','0',1),('5','5',NULL,NULL,'1','1','0','0',1),('6','6',NULL,NULL,'1','1','0','0',1),('7','7',NULL,NULL,'1','1','0','0',1),('8','8',NULL,NULL,'1','1','0','0',1);
+INSERT INTO `sales_sequence_profile` VALUES ('1','1',NULL,NULL,'1','1','0','0',1),('2','2',NULL,NULL,'1','1','0','0',1),('3','3',NULL,NULL,'1','1','0','0',1),('4','4',NULL,NULL,'1','1','0','0',1),('5','5',NULL,NULL,'1','1','0','0',1),('6','6',NULL,NULL,'1','1','0','0',1),('7','7',NULL,NULL,'1','1','0','0',1),('8','8',NULL,NULL,'1','1','0','0',1),('9','9','2',NULL,'1','1','0','0',1),('10','10','2',NULL,'1','1','0','0',1),('11','11','2',NULL,'1','1','0','0',1),('12','12','2',NULL,'1','1','0','0',1),('13','13','3',NULL,'1','1','0','0',1),('14','14','3',NULL,'1','1','0','0',1),('15','15','3',NULL,'1','1','0','0',1),('16','16','3',NULL,'1','1','0','0',1),('17','17','4',NULL,'1','1','0','0',1),('18','18','4',NULL,'1','1','0','0',1),('19','19','4',NULL,'1','1','0','0',1),('20','20','4',NULL,'1','1','0','0',1),('21','21','5',NULL,'1','1','0','0',1),('22','22','5',NULL,'1','1','0','0',1),('23','23','5',NULL,'1','1','0','0',1),('24','24','5',NULL,'1','1','0','0',1);
 /*!40000 ALTER TABLE `sales_sequence_profile` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6500,7 +7022,17 @@ CREATE TABLE `search_query` (
   KEY `SEARCH_QUERY_QUERY_TEXT_STORE_ID_POPULARITY` (`query_text`,`store_id`,`popularity`),
   KEY `SEARCH_QUERY_STORE_ID` (`store_id`),
   KEY `SEARCH_QUERY_IS_PROCESSED` (`is_processed`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Search query table';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Search query table';
+
+--
+-- Dumping data for table `search_query`
+--
+
+LOCK TABLES `search_query` WRITE;
+/*!40000 ALTER TABLE `search_query` DISABLE KEYS */;
+INSERT INTO `search_query` VALUES ('1','tooth','1','1',NULL,1,1,1,0,'2018-02-28 11:20:06');
+/*!40000 ALTER TABLE `search_query` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `search_synonyms`
@@ -6554,6 +7086,46 @@ CREATE TABLE `sequence_creditmemo_1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Table structure for table `sequence_creditmemo_2`
+--
+
+DROP TABLE IF EXISTS `sequence_creditmemo_2`;
+CREATE TABLE `sequence_creditmemo_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_creditmemo_3`
+--
+
+DROP TABLE IF EXISTS `sequence_creditmemo_3`;
+CREATE TABLE `sequence_creditmemo_3` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_creditmemo_4`
+--
+
+DROP TABLE IF EXISTS `sequence_creditmemo_4`;
+CREATE TABLE `sequence_creditmemo_4` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_creditmemo_5`
+--
+
+DROP TABLE IF EXISTS `sequence_creditmemo_5`;
+CREATE TABLE `sequence_creditmemo_5` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
 -- Table structure for table `sequence_invoice_0`
 --
 
@@ -6569,6 +7141,56 @@ CREATE TABLE `sequence_invoice_0` (
 
 DROP TABLE IF EXISTS `sequence_invoice_1`;
 CREATE TABLE `sequence_invoice_1` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sequence_invoice_1`
+--
+
+LOCK TABLES `sequence_invoice_1` WRITE;
+/*!40000 ALTER TABLE `sequence_invoice_1` DISABLE KEYS */;
+INSERT INTO `sequence_invoice_1` VALUES ('1');
+/*!40000 ALTER TABLE `sequence_invoice_1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequence_invoice_2`
+--
+
+DROP TABLE IF EXISTS `sequence_invoice_2`;
+CREATE TABLE `sequence_invoice_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_invoice_3`
+--
+
+DROP TABLE IF EXISTS `sequence_invoice_3`;
+CREATE TABLE `sequence_invoice_3` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_invoice_4`
+--
+
+DROP TABLE IF EXISTS `sequence_invoice_4`;
+CREATE TABLE `sequence_invoice_4` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_invoice_5`
+--
+
+DROP TABLE IF EXISTS `sequence_invoice_5`;
+CREATE TABLE `sequence_invoice_5` (
   `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`sequence_value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6591,6 +7213,66 @@ DROP TABLE IF EXISTS `sequence_order_1`;
 CREATE TABLE `sequence_order_1` (
   `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sequence_order_1`
+--
+
+LOCK TABLES `sequence_order_1` WRITE;
+/*!40000 ALTER TABLE `sequence_order_1` DISABLE KEYS */;
+INSERT INTO `sequence_order_1` VALUES ('1');
+/*!40000 ALTER TABLE `sequence_order_1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequence_order_2`
+--
+
+DROP TABLE IF EXISTS `sequence_order_2`;
+CREATE TABLE `sequence_order_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_order_3`
+--
+
+DROP TABLE IF EXISTS `sequence_order_3`;
+CREATE TABLE `sequence_order_3` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_order_4`
+--
+
+DROP TABLE IF EXISTS `sequence_order_4`;
+CREATE TABLE `sequence_order_4` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sequence_order_4`
+--
+
+LOCK TABLES `sequence_order_4` WRITE;
+/*!40000 ALTER TABLE `sequence_order_4` DISABLE KEYS */;
+INSERT INTO `sequence_order_4` VALUES ('1');
+/*!40000 ALTER TABLE `sequence_order_4` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequence_order_5`
+--
+
+DROP TABLE IF EXISTS `sequence_order_5`;
+CREATE TABLE `sequence_order_5` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -6609,6 +7291,46 @@ CREATE TABLE `sequence_shipment_0` (
 
 DROP TABLE IF EXISTS `sequence_shipment_1`;
 CREATE TABLE `sequence_shipment_1` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_shipment_2`
+--
+
+DROP TABLE IF EXISTS `sequence_shipment_2`;
+CREATE TABLE `sequence_shipment_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_shipment_3`
+--
+
+DROP TABLE IF EXISTS `sequence_shipment_3`;
+CREATE TABLE `sequence_shipment_3` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_shipment_4`
+--
+
+DROP TABLE IF EXISTS `sequence_shipment_4`;
+CREATE TABLE `sequence_shipment_4` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Table structure for table `sequence_shipment_5`
+--
+
+DROP TABLE IF EXISTS `sequence_shipment_5`;
+CREATE TABLE `sequence_shipment_5` (
   `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`sequence_value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -6722,7 +7444,7 @@ CREATE TABLE `store` (
   KEY `STORE_WEBSITE_ID` (`website_id`),
   KEY `STORE_IS_ACTIVE_SORT_ORDER` (`is_active`,`sort_order`),
   KEY `STORE_GROUP_ID` (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Stores';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Stores';
 
 --
 -- Dumping data for table `store`
@@ -6730,7 +7452,7 @@ CREATE TABLE `store` (
 
 LOCK TABLES `store` WRITE;
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
-INSERT INTO `store` VALUES (0,'admin',0,0,'Admin',0,1),(1,'default',1,1,'Default Store View',0,1);
+INSERT INTO `store` VALUES (0,'admin',0,0,'Admin',0,1),(1,'gs_ph_fil',1,1,'GS PH - Pilipino',0,1),(2,'gs_gb_en',2,2,'GS GB - English',0,1),(3,'gs_cn_cn',3,3,'GS CN - 中文',0,1),(4,'gs_us_en',4,4,'GS US - English',0,1),(5,'gs_au_en',5,5,'GS AU - English',0,1);
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6750,7 +7472,7 @@ CREATE TABLE `store_group` (
   UNIQUE KEY `STORE_GROUP_CODE` (`code`),
   KEY `STORE_GROUP_WEBSITE_ID` (`website_id`),
   KEY `STORE_GROUP_DEFAULT_STORE_ID` (`default_store_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Store Groups';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Store Groups';
 
 --
 -- Dumping data for table `store_group`
@@ -6758,7 +7480,7 @@ CREATE TABLE `store_group` (
 
 LOCK TABLES `store_group` WRITE;
 /*!40000 ALTER TABLE `store_group` DISABLE KEYS */;
-INSERT INTO `store_group` VALUES (0,0,'default','Default','0',0),(1,1,'main_website_store','Main Website Store','2',1);
+INSERT INTO `store_group` VALUES (0,0,'default','Default','0',0),(1,1,'gs_ph_store','GS PH Store','5',1),(2,2,'gs_gb_store','GS GB Store','3',2),(3,3,'gs_cn_store','GS CN Store','4',3),(4,4,'gs_us_store','GS US Store','6',4),(5,5,'gs_au_store','GS AU Store','7',5);
 /*!40000 ALTER TABLE `store_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6778,7 +7500,7 @@ CREATE TABLE `store_website` (
   UNIQUE KEY `STORE_WEBSITE_CODE` (`code`),
   KEY `STORE_WEBSITE_SORT_ORDER` (`sort_order`),
   KEY `STORE_WEBSITE_DEFAULT_GROUP_ID` (`default_group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Websites';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Websites';
 
 --
 -- Dumping data for table `store_website`
@@ -6786,7 +7508,7 @@ CREATE TABLE `store_website` (
 
 LOCK TABLES `store_website` WRITE;
 /*!40000 ALTER TABLE `store_website` DISABLE KEYS */;
-INSERT INTO `store_website` VALUES (0,'admin','Admin',0,0,0),(1,'base','Main Website',0,1,1);
+INSERT INTO `store_website` VALUES (0,'admin','Admin',0,0,0),(1,'gs_ph','Global Store PH',0,1,1),(2,'gs_gb','Global Store GB',1,2,0),(3,'gs_cn','Global Store CN',2,3,0),(4,'gs_us','Global Store US',3,4,0),(5,'gs_au','Global Store AU',4,5,0);
 /*!40000 ALTER TABLE `store_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7050,7 +7772,17 @@ CREATE TABLE `ui_bookmark` (
   `updated_at` datetime NOT NULL COMMENT 'Bookmark updated at',
   PRIMARY KEY (`bookmark_id`),
   KEY `UI_BOOKMARK_USER_ID_NAMESPACE_IDENTIFIER` (`user_id`,`namespace`,`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Bookmark';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='Bookmark';
+
+--
+-- Dumping data for table `ui_bookmark`
+--
+
+LOCK TABLES `ui_bookmark` WRITE;
+/*!40000 ALTER TABLE `ui_bookmark` DISABLE KEYS */;
+INSERT INTO `ui_bookmark` VALUES ('1','1','product_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"displayMode\":\"grid\",\"columns\":{\"ids\":{\"visible\":true,\"sorting\":false},\"type_id\":{\"visible\":true,\"sorting\":false},\"attribute_set_id\":{\"visible\":true,\"sorting\":false},\"visibility\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"manufacturer\":{\"visible\":false,\"sorting\":false},\"color\":{\"visible\":false,\"sorting\":false},\"custom_design\":{\"visible\":false,\"sorting\":false},\"page_layout\":{\"visible\":false,\"sorting\":false},\"country_of_manufacture\":{\"visible\":false,\"sorting\":false},\"custom_layout\":{\"visible\":false,\"sorting\":false},\"gift_message_available\":{\"visible\":false,\"sorting\":false},\"tax_class_id\":{\"visible\":false,\"sorting\":false},\"thumbnail\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"special_from_date\":{\"visible\":false,\"sorting\":false},\"special_to_date\":{\"visible\":false,\"sorting\":false},\"news_from_date\":{\"visible\":false,\"sorting\":false},\"news_to_date\":{\"visible\":false,\"sorting\":false},\"custom_design_from\":{\"visible\":false,\"sorting\":false},\"custom_design_to\":{\"visible\":false,\"sorting\":false},\"entity_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"sku\":{\"visible\":true,\"sorting\":false},\"price\":{\"visible\":true,\"sorting\":false},\"websites\":{\"visible\":true,\"sorting\":false},\"qty\":{\"visible\":true,\"sorting\":false},\"short_description\":{\"visible\":false,\"sorting\":false},\"special_price\":{\"visible\":false,\"sorting\":false},\"cost\":{\"visible\":false,\"sorting\":false},\"weight\":{\"visible\":false,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keyword\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"url_key\":{\"visible\":false,\"sorting\":false},\"msrp\":{\"visible\":false,\"sorting\":false}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"entity_id\":1,\"thumbnail\":2,\"name\":3,\"type_id\":4,\"attribute_set_id\":5,\"sku\":6,\"price\":7,\"qty\":8,\"visibility\":9,\"status\":10,\"websites\":11,\"short_description\":12,\"special_price\":13,\"special_from_date\":14,\"special_to_date\":15,\"cost\":16,\"weight\":17,\"manufacturer\":18,\"meta_title\":19,\"meta_keyword\":20,\"meta_description\":21,\"color\":22,\"news_from_date\":23,\"news_to_date\":24,\"custom_design\":25,\"custom_design_from\":26,\"custom_design_to\":27,\"page_layout\":28,\"country_of_manufacture\":29,\"custom_layout\":30,\"url_key\":31,\"msrp\":32,\"gift_message_available\":33,\"tax_class_id\":34,\"actions\":35},\"filters\":{\"applied\":{\"placeholder\":true}}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('2','1','product_listing','current',0,NULL,'{\"current\":{\"displayMode\":\"grid\",\"columns\":{\"ids\":{\"visible\":true,\"sorting\":false},\"type_id\":{\"visible\":true,\"sorting\":false},\"attribute_set_id\":{\"visible\":true,\"sorting\":false},\"visibility\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"manufacturer\":{\"visible\":false,\"sorting\":false},\"color\":{\"visible\":false,\"sorting\":false},\"custom_design\":{\"visible\":false,\"sorting\":false},\"page_layout\":{\"visible\":false,\"sorting\":false},\"country_of_manufacture\":{\"visible\":false,\"sorting\":false},\"custom_layout\":{\"visible\":false,\"sorting\":false},\"gift_message_available\":{\"visible\":false,\"sorting\":false},\"tax_class_id\":{\"visible\":false,\"sorting\":false},\"thumbnail\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"special_from_date\":{\"visible\":false,\"sorting\":false},\"special_to_date\":{\"visible\":false,\"sorting\":false},\"news_from_date\":{\"visible\":false,\"sorting\":false},\"news_to_date\":{\"visible\":false,\"sorting\":false},\"custom_design_from\":{\"visible\":false,\"sorting\":false},\"custom_design_to\":{\"visible\":false,\"sorting\":false},\"entity_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"sku\":{\"visible\":true,\"sorting\":false},\"price\":{\"visible\":true,\"sorting\":false},\"websites\":{\"visible\":true,\"sorting\":false},\"qty\":{\"visible\":true,\"sorting\":false},\"short_description\":{\"visible\":false,\"sorting\":false},\"special_price\":{\"visible\":false,\"sorting\":false},\"cost\":{\"visible\":false,\"sorting\":false},\"weight\":{\"visible\":false,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keyword\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"url_key\":{\"visible\":false,\"sorting\":false},\"msrp\":{\"visible\":false,\"sorting\":false}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"entity_id\":1,\"thumbnail\":2,\"name\":3,\"type_id\":4,\"attribute_set_id\":5,\"sku\":6,\"price\":7,\"qty\":8,\"visibility\":9,\"status\":10,\"websites\":11,\"short_description\":12,\"special_price\":13,\"special_from_date\":14,\"special_to_date\":15,\"cost\":16,\"weight\":17,\"manufacturer\":18,\"meta_title\":19,\"meta_keyword\":20,\"meta_description\":21,\"color\":22,\"news_from_date\":23,\"news_to_date\":24,\"custom_design\":25,\"custom_design_from\":26,\"custom_design_to\":27,\"page_layout\":28,\"country_of_manufacture\":29,\"custom_layout\":30,\"url_key\":31,\"msrp\":32,\"gift_message_available\":33,\"tax_class_id\":34,\"actions\":35},\"filters\":{\"applied\":{\"placeholder\":true}}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('3','1','sales_order_grid','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"increment_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"billing_name\":{\"visible\":true,\"sorting\":false},\"shipping_name\":{\"visible\":true,\"sorting\":false},\"base_grand_total\":{\"visible\":true,\"sorting\":false},\"grand_total\":{\"visible\":true,\"sorting\":false},\"billing_address\":{\"visible\":false,\"sorting\":false},\"shipping_address\":{\"visible\":false,\"sorting\":false},\"shipping_information\":{\"visible\":false,\"sorting\":false},\"customer_email\":{\"visible\":false,\"sorting\":false},\"subtotal\":{\"visible\":false,\"sorting\":false},\"shipping_and_handling\":{\"visible\":false,\"sorting\":false},\"customer_name\":{\"visible\":false,\"sorting\":false},\"total_refunded\":{\"visible\":false,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":\"desc\"},\"status\":{\"visible\":true,\"sorting\":false},\"customer_group\":{\"visible\":false,\"sorting\":false},\"payment_method\":{\"visible\":false,\"sorting\":false},\"signifyd_guarantee_status\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"increment_id\":1,\"store_id\":2,\"created_at\":3,\"billing_name\":4,\"shipping_name\":5,\"base_grand_total\":6,\"grand_total\":7,\"status\":8,\"billing_address\":9,\"shipping_address\":10,\"shipping_information\":11,\"customer_email\":12,\"customer_group\":13,\"subtotal\":14,\"shipping_and_handling\":15,\"customer_name\":16,\"payment_method\":17,\"total_refunded\":18,\"actions\":19,\"signifyd_guarantee_status\":20}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('4','1','sales_order_grid','current',0,NULL,'{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"increment_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"billing_name\":{\"visible\":true,\"sorting\":false},\"shipping_name\":{\"visible\":true,\"sorting\":false},\"base_grand_total\":{\"visible\":true,\"sorting\":false},\"grand_total\":{\"visible\":true,\"sorting\":false},\"billing_address\":{\"visible\":false,\"sorting\":false},\"shipping_address\":{\"visible\":false,\"sorting\":false},\"shipping_information\":{\"visible\":false,\"sorting\":false},\"customer_email\":{\"visible\":false,\"sorting\":false},\"subtotal\":{\"visible\":false,\"sorting\":false},\"shipping_and_handling\":{\"visible\":false,\"sorting\":false},\"customer_name\":{\"visible\":false,\"sorting\":false},\"total_refunded\":{\"visible\":false,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":\"desc\"},\"status\":{\"visible\":true,\"sorting\":false},\"customer_group\":{\"visible\":false,\"sorting\":false},\"payment_method\":{\"visible\":false,\"sorting\":false},\"signifyd_guarantee_status\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"increment_id\":1,\"store_id\":2,\"created_at\":3,\"billing_name\":4,\"shipping_name\":5,\"base_grand_total\":6,\"grand_total\":7,\"status\":8,\"billing_address\":9,\"shipping_address\":10,\"shipping_information\":11,\"customer_email\":12,\"customer_group\":13,\"subtotal\":14,\"shipping_and_handling\":15,\"customer_name\":16,\"payment_method\":17,\"total_refunded\":18,\"actions\":19,\"signifyd_guarantee_status\":20}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('5','1','sales_order_view_creditmemo_grid','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"increment_id\":{\"visible\":true,\"sorting\":false},\"order_increment_id\":{\"visible\":true,\"sorting\":false},\"billing_name\":{\"visible\":true,\"sorting\":false},\"base_grand_total\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":false,\"sorting\":false},\"billing_address\":{\"visible\":false,\"sorting\":false},\"shipping_address\":{\"visible\":false,\"sorting\":false},\"customer_name\":{\"visible\":false,\"sorting\":false},\"customer_email\":{\"visible\":false,\"sorting\":false},\"shipping_information\":{\"visible\":false,\"sorting\":false},\"subtotal\":{\"visible\":false,\"sorting\":false},\"shipping_and_handling\":{\"visible\":false,\"sorting\":false},\"adjustment_positive\":{\"visible\":false,\"sorting\":false},\"adjustment_negative\":{\"visible\":false,\"sorting\":false},\"order_base_grand_total\":{\"visible\":false,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"order_created_at\":{\"visible\":true,\"sorting\":false},\"state\":{\"visible\":true,\"sorting\":false},\"order_status\":{\"visible\":false,\"sorting\":false},\"customer_group_id\":{\"visible\":false,\"sorting\":false},\"payment_method\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"increment_id\":1,\"created_at\":2,\"order_increment_id\":3,\"order_created_at\":4,\"billing_name\":5,\"state\":6,\"base_grand_total\":7,\"order_status\":8,\"store_id\":9,\"billing_address\":10,\"shipping_address\":11,\"customer_name\":12,\"customer_email\":13,\"customer_group_id\":14,\"payment_method\":15,\"shipping_information\":16,\"subtotal\":17,\"shipping_and_handling\":18,\"adjustment_positive\":19,\"adjustment_negative\":20,\"order_base_grand_total\":21,\"actions\":22}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('6','1','sales_order_view_invoice_grid','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"increment_id\":{\"visible\":true,\"sorting\":\"asc\"},\"order_increment_id\":{\"visible\":true,\"sorting\":false},\"billing_name\":{\"visible\":true,\"sorting\":false},\"grand_total\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":false,\"sorting\":false},\"billing_address\":{\"visible\":false,\"sorting\":false},\"shipping_address\":{\"visible\":false,\"sorting\":false},\"customer_name\":{\"visible\":false,\"sorting\":false},\"customer_email\":{\"visible\":false,\"sorting\":false},\"shipping_information\":{\"visible\":false,\"sorting\":false},\"subtotal\":{\"visible\":false,\"sorting\":false},\"shipping_and_handling\":{\"visible\":false,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"order_created_at\":{\"visible\":true,\"sorting\":false},\"state\":{\"visible\":true,\"sorting\":false},\"customer_group_id\":{\"visible\":false,\"sorting\":false},\"payment_method\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"increment_id\":1,\"created_at\":2,\"order_increment_id\":3,\"order_created_at\":4,\"billing_name\":5,\"state\":6,\"grand_total\":7,\"store_id\":8,\"billing_address\":9,\"shipping_address\":10,\"customer_name\":11,\"customer_email\":12,\"customer_group_id\":13,\"payment_method\":14,\"shipping_information\":15,\"subtotal\":16,\"shipping_and_handling\":17,\"actions\":18}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('7','1','sales_order_view_invoice_grid','current',0,NULL,'{\"current\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"increment_id\":{\"visible\":true,\"sorting\":\"asc\"},\"order_increment_id\":{\"visible\":true,\"sorting\":false},\"billing_name\":{\"visible\":true,\"sorting\":false},\"grand_total\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":false,\"sorting\":false},\"billing_address\":{\"visible\":false,\"sorting\":false},\"shipping_address\":{\"visible\":false,\"sorting\":false},\"customer_name\":{\"visible\":false,\"sorting\":false},\"customer_email\":{\"visible\":false,\"sorting\":false},\"shipping_information\":{\"visible\":false,\"sorting\":false},\"subtotal\":{\"visible\":false,\"sorting\":false},\"shipping_and_handling\":{\"visible\":false,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"order_created_at\":{\"visible\":true,\"sorting\":false},\"state\":{\"visible\":true,\"sorting\":false},\"customer_group_id\":{\"visible\":false,\"sorting\":false},\"payment_method\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"increment_id\":1,\"created_at\":2,\"order_increment_id\":3,\"order_created_at\":4,\"billing_name\":5,\"state\":6,\"grand_total\":7,\"store_id\":8,\"billing_address\":9,\"shipping_address\":10,\"customer_name\":11,\"customer_email\":12,\"customer_group_id\":13,\"payment_method\":14,\"shipping_information\":15,\"subtotal\":16,\"shipping_and_handling\":17,\"actions\":18}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('8','1','sales_order_view_creditmemo_grid','current',0,NULL,'{\"current\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"increment_id\":{\"visible\":true,\"sorting\":false},\"order_increment_id\":{\"visible\":true,\"sorting\":false},\"billing_name\":{\"visible\":true,\"sorting\":false},\"base_grand_total\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":false,\"sorting\":false},\"billing_address\":{\"visible\":false,\"sorting\":false},\"shipping_address\":{\"visible\":false,\"sorting\":false},\"customer_name\":{\"visible\":false,\"sorting\":false},\"customer_email\":{\"visible\":false,\"sorting\":false},\"shipping_information\":{\"visible\":false,\"sorting\":false},\"subtotal\":{\"visible\":false,\"sorting\":false},\"shipping_and_handling\":{\"visible\":false,\"sorting\":false},\"adjustment_positive\":{\"visible\":false,\"sorting\":false},\"adjustment_negative\":{\"visible\":false,\"sorting\":false},\"order_base_grand_total\":{\"visible\":false,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"order_created_at\":{\"visible\":true,\"sorting\":false},\"state\":{\"visible\":true,\"sorting\":false},\"order_status\":{\"visible\":false,\"sorting\":false},\"customer_group_id\":{\"visible\":false,\"sorting\":false},\"payment_method\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"increment_id\":1,\"created_at\":2,\"order_increment_id\":3,\"order_created_at\":4,\"billing_name\":5,\"state\":6,\"base_grand_total\":7,\"order_status\":8,\"store_id\":9,\"billing_address\":10,\"shipping_address\":11,\"customer_name\":12,\"customer_email\":13,\"customer_group_id\":14,\"payment_method\":15,\"shipping_information\":16,\"subtotal\":17,\"shipping_and_handling\":18,\"adjustment_positive\":19,\"adjustment_negative\":20,\"order_base_grand_total\":21,\"actions\":22}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('9','1','dotdigitalgroup_cron_grid','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"schedule_id\":{\"visible\":true,\"sorting\":false},\"job_code\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"messages\":{\"visible\":true,\"sorting\":\"asc\"},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"scheduled_at\":{\"visible\":true,\"sorting\":false},\"executed_at\":{\"visible\":true,\"sorting\":false},\"finished_at\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"schedule_id\":1,\"job_code\":2,\"status\":3,\"messages\":4,\"created_at\":5,\"scheduled_at\":6,\"executed_at\":7,\"finished_at\":8}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('10','1','dotdigitalgroup_cron_grid','current',0,NULL,'{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"schedule_id\":{\"visible\":true,\"sorting\":false},\"job_code\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"messages\":{\"visible\":true,\"sorting\":\"asc\"},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"scheduled_at\":{\"visible\":true,\"sorting\":false},\"executed_at\":{\"visible\":true,\"sorting\":false},\"finished_at\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"schedule_id\":1,\"job_code\":2,\"status\":3,\"messages\":4,\"created_at\":5,\"scheduled_at\":6,\"executed_at\":7,\"finished_at\":8}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('11','1','dotdigitalgroup_automation_grid','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"email\":{\"visible\":true,\"sorting\":false},\"program_id\":{\"visible\":true,\"sorting\":false},\"automation_type\":{\"visible\":true,\"sorting\":false},\"message\":{\"visible\":true,\"sorting\":false},\"store_name\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":\"desc\"},\"updated_at\":{\"visible\":true,\"sorting\":false},\"enrolment_status\":{\"visible\":true,\"sorting\":false},\"website_id\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"email\":1,\"program_id\":2,\"automation_type\":3,\"enrolment_status\":4,\"website_id\":5,\"message\":6,\"store_name\":7,\"created_at\":8,\"updated_at\":9}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),('12','1','dotdigitalgroup_automation_grid','current',0,NULL,'{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"email\":{\"visible\":true,\"sorting\":false},\"program_id\":{\"visible\":true,\"sorting\":false},\"automation_type\":{\"visible\":true,\"sorting\":false},\"message\":{\"visible\":true,\"sorting\":false},\"store_name\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":\"desc\"},\"updated_at\":{\"visible\":true,\"sorting\":false},\"enrolment_status\":{\"visible\":true,\"sorting\":false},\"website_id\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"email\":1,\"program_id\":2,\"automation_type\":3,\"enrolment_status\":4,\"website_id\":5,\"message\":6,\"store_name\":7,\"created_at\":8,\"updated_at\":9}}}','0000-00-00 00:00:00','0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `ui_bookmark` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `url_rewrite`
@@ -7072,7 +7804,7 @@ CREATE TABLE `url_rewrite` (
   UNIQUE KEY `URL_REWRITE_REQUEST_PATH_STORE_ID` (`request_path`,`store_id`),
   KEY `URL_REWRITE_TARGET_PATH` (`target_path`),
   KEY `URL_REWRITE_STORE_ID_ENTITY_ID` (`store_id`,`entity_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Url Rewrites';
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='Url Rewrites';
 
 --
 -- Dumping data for table `url_rewrite`
@@ -7080,7 +7812,7 @@ CREATE TABLE `url_rewrite` (
 
 LOCK TABLES `url_rewrite` WRITE;
 /*!40000 ALTER TABLE `url_rewrite` DISABLE KEYS */;
-INSERT INTO `url_rewrite` VALUES ('1','cms-page','1','no-route','cms/page/view/page_id/1',0,1,NULL,1,NULL),('2','cms-page','2','home','cms/page/view/page_id/2',0,1,NULL,1,NULL),('3','cms-page','3','enable-cookies','cms/page/view/page_id/3',0,1,NULL,1,NULL),('4','cms-page','4','privacy-policy-cookie-restriction-mode','cms/page/view/page_id/4',0,1,NULL,1,NULL);
+INSERT INTO `url_rewrite` VALUES ('7','category','10','at-home.html','catalog/category/view/id/10',0,4,NULL,1,NULL),('20','product','1','toothbrush.html','catalog/product/view/id/1',0,2,NULL,1,NULL),('21','product','1','toothbrush.html','catalog/product/view/id/1',0,3,NULL,1,NULL),('25','product','1','toothbrush.html','catalog/product/view/id/1',0,5,NULL,1,NULL),('26','category','11','at-home.html','catalog/category/view/id/11',0,2,NULL,1,NULL),('27','product','2','vacuum-cleaner.html','catalog/product/view/id/2',0,2,NULL,1,NULL),('28','product','2','at-home/vacuum-cleaner.html','catalog/product/view/id/2/category/11',0,2,NULL,1,'{\"category_id\":\"11\"}'),('29','product','2','/vacuum-cleaner.html','catalog/product/view/id/2/category/3',0,2,NULL,1,'{\"category_id\":\"3\"}'),('30','product','2','vacuum-cleaner.html','catalog/product/view/id/2',0,4,NULL,1,NULL),('31','product','2','at-home/vacuum-cleaner.html','catalog/product/view/id/2/category/10',0,4,NULL,1,'{\"category_id\":\"10\"}'),('32','product','2','/vacuum-cleaner.html','catalog/product/view/id/2/category/6',0,4,NULL,1,'{\"category_id\":\"6\"}'),('39','category','9','at-home.html','catalog/category/view/id/9',0,1,NULL,1,NULL),('40','category','9','home.html','at-home.html',301,1,NULL,0,NULL),('41','product','1','toothbrush.html','catalog/product/view/id/1',0,1,NULL,1,NULL),('42','product','1','at-home/toothbrush.html','catalog/product/view/id/1/category/9',0,1,NULL,1,'{\"category_id\":\"9\"}'),('43','product','1','home/toothbrush.html','at-home/toothbrush.html',301,1,NULL,0,'{\"category_id\":\"9\"}'),('44','product','1','/toothbrush.html','catalog/product/view/id/1/category/5',0,1,NULL,1,'{\"category_id\":\"5\"}'),('45','product','1','toothbrush.html','catalog/product/view/id/1',0,4,NULL,1,NULL),('46','product','1','at-home/toothbrush.html','catalog/product/view/id/1/category/10',0,4,NULL,1,'{\"category_id\":\"10\"}'),('47','product','1','/toothbrush.html','catalog/product/view/id/1/category/6',0,4,NULL,1,'{\"category_id\":\"6\"}');
 /*!40000 ALTER TABLE `url_rewrite` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -8082,4 +8814,4 @@ ALTER TABLE `wishlist_item_option`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-27 10:46:00 GMT
+-- Dump completed on 2018-03-01 06:33:26 GMT
