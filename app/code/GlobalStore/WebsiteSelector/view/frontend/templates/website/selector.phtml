@@ -1,0 +1,32 @@
+<div class="switcher website switcher-website" id="switcher-website" style="margin: 7px 5px 0 0;">
+    <strong class="label switcher-label">
+        <span>Select Website</span>
+    </strong>
+    <div class="actions dropdown options switcher-options">
+        <div class="action toggle switcher-trigger"
+                 role="button"
+                 tabindex="0"
+                 data-mage-init='{"dropdown":{}}'
+                 data-toggle="dropdown"
+                 data-trigger-keypress-button="true"
+                 id="switcher-website-trigger">
+            <strong>
+                <span><?=$block->escapeHtml($block->getCurrentWebsite()->getName())?></span>
+            </strong>
+        </div>
+        <ul class="dropdown switcher-dropdown" data-target="dropdown" aria-hidden="true">
+            <?php foreach($block->getWebsites() as $website): ?>
+                <?php 
+                    if($website->getId() == $block->getCurrentWebsite()->getId()) {
+                        continue;
+                    }     
+                ?>
+                <li class="switcher-option">
+                    <a href="#" data-post="<?=$block->escapeHtml($block->getWebsiteUrl($website))?>">
+                        <?=$this->escapeHtml($website->getName())?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
