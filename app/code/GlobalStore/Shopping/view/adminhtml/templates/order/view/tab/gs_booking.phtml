@@ -1,0 +1,24 @@
+<?php
+    $orderBooking = $block->getOrderBooking();
+?>
+
+<section class="admin__page-section order-view-account-information">    
+    <div class="admin__page-section-title">
+        <span class="title">Global Store Booking Information</span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item">
+            <div class="admin__page-section-item-title">
+                <span class="title">General</span>
+            </div>            
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary">
+                    <tr>
+                        <th>Booking Number</th>
+                        <td><?=$orderBooking['booking_number']?></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

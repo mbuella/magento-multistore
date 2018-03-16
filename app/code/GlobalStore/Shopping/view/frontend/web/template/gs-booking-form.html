@@ -1,0 +1,25 @@
+<div>
+    <div class="gs-booking">
+        <div class="gs-booking-content" data-role="content">
+            <form id="gs-booking-form" class="form"
+                data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+                <div class="payment-option-inner">
+                    <!-- <legend data-bind="i18n: 'GS Booking Form'"></legend> -->
+                    <!-- ko foreach: getRegion('gs-booking-form-fields') -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!--/ko-->
+                </div>
+                <!--<button type="reset">
+                    <span data-bind="i18n: 'Reset'"></span>
+                </button>-->
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button class="action action-apply" type="button" data-bind="'value': $t('Save Booking Info'), click: onBookingFormSubmit">
+                            <span><!-- ko i18n: 'Save Booking Info'--><!-- /ko --></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

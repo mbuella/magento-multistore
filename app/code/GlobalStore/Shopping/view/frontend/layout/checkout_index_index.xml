@@ -1,0 +1,69 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <!-- Your customization will be here -->
+                        <item name="components" xsi:type="array">
+                            <item name="checkout" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="steps" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="billing-step" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="payment" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="afterMethods" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <!-- GS Booking Form -->
+                                                                    
+                                                                    <item name="gs-booking-form-container" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">GlobalStore_Shopping/js/view/gs-booking-form</item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        <item name="sortOrder" xsi:type="string">1</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="template" xsi:type="string">GlobalStore_Shopping/gs-booking-form</item>
+                                                                        </item>
+                                                                        <item name="children" xsi:type="array">
+                                                                            <item name="gs-booking-form-fieldset" xsi:type="array">
+                                                                                <!-- uiComponent is used as a wrapper for form fields (its template will render all children as a list) -->
+                                                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                                                <!-- the following display area is used in template (see below) -->
+                                                                                <item name="displayArea" xsi:type="string">gs-booking-form-fields</item>
+                                                                                <item name="children" xsi:type="array">
+                                                                                    <item name="booking_number" xsi:type="array">
+                                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                                        <item name="config" xsi:type="array">
+                                                                                            <!-- customScope is used to group elements within a single form (e.g. they can be validated separately) -->
+                                                                                            <item name="customScope" xsi:type="string">gsBookingForm</item>
+                                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                                        </item>
+                                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                                        <item name="dataScope" xsi:type="string">gsBookingForm.booking_number</item>
+                                                                                        <item name="label" xsi:type="string">Booking Number</item>
+                                                                                        <item name="sortOrder" xsi:type="string">3</item>
+                                                                                        <!-- <item name="validation" xsi:type="array">
+                                                                                            <item name="required-entry" xsi:type="string">false</item>
+                                                                                        </item> -->
+                                                                                    </item>
+                                                                                </item>
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>                                                                
+                                                            </item>                                                            
+                                                        </item>
+                                                    </item>                                                    
+                                                </item>                                                
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>                                
+                            </item>                            
+                        </item>                        
+                    </argument>
+                </arguments>
+        </referenceBlock>
+    </body>
+</page>
